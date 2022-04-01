@@ -1,0 +1,42 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "es5",
+    "sourceMap": true,
+    "removeComments": true,
+    "lib": ["es2019", "dom"],
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "outDir": "./build",
+    "esModuleInterop": true,
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "suppressImplicitAnyIndexErrors": true,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "noImplicitAny": true,
+    "allowSyntheticDefaultImports": true,
+    "jsx": "react",
+    "typeRoots": ["./node_modules/@types"],
+    "baseUrl": ".",
+    "paths": {
+      "@assets/*": ["./src/assets/*"],
+      "@components/*": ["./src/components/*"],
+      "@composites/*": ["./src/composites/*"],
+      "@controllers/*": ["./src/controllers/*"],
+      "@core/*": ["./src/core/*"],
+      "@pages/*": ["./src/pages/*"],
+      "@stores/*": ["./src/stores/*"],
+      "@mui-nested-menu/*": ["./src/mui-nested-menu/*"],
+      "@__mocks__/*": ["./__mocks__/*"]
+    }
+  },
+  "exclude": [".git", "node_modules"],
+  "include": [
+    "src/**/*",
+    "__tests__/**/*",
+    "__mocks__/**/*",
+    "app.spec.tsx",
+    "config/*.d.ts"
+  ]
+}
