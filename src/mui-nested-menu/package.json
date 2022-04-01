@@ -4,7 +4,13 @@
   "homepage": "https://mui-nested-menu.vercel.app/",
   "description": "Inifintely deep nested menu items for MUI 5.",
   "main": "index.ts",
-  "keywords": ["material", "design", "ui", "react", "mui"],
+  "keywords": [
+    "material",
+    "design",
+    "ui",
+    "react",
+    "mui"
+  ],
   "author": "Steve Richardson",
   "license": "MIT",
   "peerDependencies": {

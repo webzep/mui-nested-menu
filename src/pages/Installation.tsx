@@ -6,8 +6,8 @@ export const InstallationPage = () => {
   return (
     <>
       <h1>🪆 Mui Nested Menu</h1>
-			<h2>It's not perfect, but it's pretty good.</h2>
-			
+      <h2>It's not perfect, but it's pretty good.</h2>
+
       <P>
         This package provides components to let you nest menu items infinitely
         deep. The code is an adaption from{' '}
@@ -57,9 +57,9 @@ export const InstallationPage = () => {
       <Subheading>💻 Contributing</Subheading>
       <P>
         Pull requests for{' '}
-        <a href="https://github.com/steviebaa/themestress">the project</a> are
-        more than welcome. Please make sure to stick to the coding style used
-        throughout the project.
+        <a href="https://github.com/steviebaa/mui-nested-menu">the project</a>{' '}
+        are more than welcome. Please make sure to stick to the coding style
+        used throughout the project.
       </P>
 
       <ol>

@@ -1,7 +1,7 @@
 import React, {useState, useRef, useImperativeHandle} from 'react';
 import {IconMenuItem} from './IconMenuItem';
 import {Menu, MenuItemProps, MenuProps} from '@mui/material';
-import {ChevronRight} from '@mui-nested-menu/icons/ChevronRight';
+import {ChevronRight} from '../icons/ChevronRight';
 
 export interface NestedMenuItemProps extends Omit<MenuItemProps, 'button'> {
   parentMenuOpen: boolean;

@@ -1,38 +1,40 @@
-# NestedMenu for Material UI V5
+# 🪆 Mui Nested Menu
 
-Create nested MenuItems in various ways.
+## It's not perfect, but it's pretty good.
 
-Components included:
+This package provides components to let you nest menu items infinitely deep. The code is an adaption from <a href="material-ui-nested-menu-item">this package</a> to work with <a href="https://mui.com">MUI version 5</a>.
 
-- `<NestedDropdown />` good for menu bar dropdowns.
-- `<ContextMenu />` for a right-click menu.
-- `<IconMenuItem />` a menu item which can take start and end icons.
-- `<NestedMenuItem />` the actual nested menu component.
+## 📦 Install
 
-This is a JavaScript adaption of [NestedMenuItem](https://github.com/azmenak/material-ui-nested-menu-item) targeted to work with Material UI version 5.
-
-## Demo
-
-Find a demo here: https://mui-nested-menuitem-demo.vercel.app/
-
-This will also serve as the documentation.
-
-## Install
-
-**Get MUI**
+The code is <a href="https://github.com/steviebaa/mui-nested-menu">open source</a>, so you can use the library by copying the `src/mui-nested-menu` directory to your project (if you'd like to adapt the components) or by installing it via NPM.
 
 ```
-npm i @mui/material @emotion/react @emotion/styled
+$ npm install mui-nested-menu
 ```
 
-**If you want icons**
+## 🛠 Exports
 
-```
-npm i @mui/icons-material
-```
+The following items and interfaces are exported from the package:
 
-**Nested MenuItems**
+- `NestedDropdown` - To create menu bar dropdowns.
 
-```
-npm i mui-nested-menu
-```
+- `ContextMenu` - For a right-click menu.
+
+- `IconMenuItem` - A menu item which can take start and end icons.
+
+- `NestedMenuItem` - The actual nested menu component.
+
+- `nestedMenuItemsFromObject({(items, isOpen, handleClose)})` - Utility function which returns a list of menu items from a given array of items in the object format you see in the samples. You can then manually put this inside a `<Menu />` component.
+
+- `MenuItemData` - An interface for the `menuItemsData` prop.
+
+## 💻 Contributing
+
+Pull requests for <a href="https://github.com/steviebaa/mui-nested-menu">the project</a> are more than welcome. Please make sure to stick to the coding style used throughout the project.
+
+1. Clone the project from GitHub
+2. Create a new branch
+3. Make your changes
+4. Commit your changes
+5. Push your changes to the branch
+6. Open a pull request

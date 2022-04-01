@@ -1,7 +1,7 @@
 import React from 'react';
 import {nestedMenuItemsFromObject} from './nestedMenuItemsFromObject';
 import {Button, ButtonProps, Menu, MenuProps} from '@mui/material';
-import {ChevronDown} from '@mui-nested-menu/icons/ChevronDown';
+import {ChevronDown} from '../icons/ChevronDown';
 import {MenuItemData} from '..';
 
 interface NestedDropdownProps {
