@@ -21,7 +21,7 @@ export function nestedMenuItemsFromObject({
   return items.map(item => {
     const {leftIcon, rightIcon, label, items, callback} = item;
 
-    if (items) {
+    if (items && items.length > 0) {
       // Recurse deeper
       return (
         <NestedMenuItem
