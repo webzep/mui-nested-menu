@@ -64,9 +64,9 @@ export const InstallationPage = () => {
       </P>
 
       <P>
-        The nest menu code can be found in `src/mui-nested-menu`. This way, as
-        you build, you can see the changes by launching the documentation. Once
-        a PR is merged, I will update NPM.
+        The nest menu code can be found in <Code>src/mui-nested-menu</Code>.
+        This way, as you build, you can see the changes by launching the
+        documentation. Once a PR is merged, I will update NPM.
       </P>
 
       <ol>
