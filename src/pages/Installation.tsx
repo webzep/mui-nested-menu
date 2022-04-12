@@ -21,7 +21,8 @@ export const InstallationPage = () => {
         <a href="https://github.com/steviebaa/mui-nested-menu">open source</a>,
         so you can use the library by copying the{' '}
         <Code>src/mui-nested-menu</Code> directory to your project (if you'd
-        like to adapt the components) or by installing it via NPM.
+        like to adapt the components) or by installing it via{' '}
+        <a href="https://www.npmjs.com/package/mui-nested-menu">NPM</a>.
       </P>
       <CodeBlock code="$ npm install mui-nested-menu" />
       {/*  */}
