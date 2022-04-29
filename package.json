@@ -26,7 +26,7 @@
     "package:build": "parcel build src/index.html -d dist --no-source-maps",
     "package:format": "prettier --write \"src/mui-nested-menu/**/*.{ts,js,tsx,jsx}\"",
     "package:lint": "eslint ./src/mui-nested-menu --ext .ts,.tsx",
-    "pack": "npm run package:format && npm run package:lint && cd src/mui-nested-menu && tsc -p tsconfig.build.json && cd ../.. && cp ./README.md ./dist/README.md"
+    "pack": "npm run package:format && npm run package:lint && cd src/mui-nested-menu && tsc -p tsconfig.build.json && cd ../.. && cp ./README.md ./dist/README.md && cp ./LICENSE ./dist/LICENSE && cp ./src/mui-nested-menu/template-package.json ./dist/package.json"
   },
   "dependencies": {
     "@mui/icons-material": "^5.5.1",
