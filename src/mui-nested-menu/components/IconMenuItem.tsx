@@ -31,7 +31,7 @@ interface IconMenuItemProps {
 
 const IconMenuItem = forwardRef<HTMLLIElement, IconMenuItemProps>(
   (
-    {leftIcon, rightIcon, onClick, label, MenuItemProps, className, ...props},
+    {leftIcon, rightIcon, label, MenuItemProps, className, ...props},
     ref,
   ) => {
     return (
