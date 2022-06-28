@@ -5,6 +5,7 @@ import {MenuItemData} from '../definitions';
 
 export interface ContextMenuProps {
   children?: React.ReactNode;
+  menuItems?: React.ReactNode[];
   menuItemsData?: MenuItemData[];
 }
 
@@ -14,7 +15,7 @@ interface Position {
 }
 
 const ContextMenu = forwardRef<HTMLDivElement, ContextMenuProps>(
-  ({children, menuItemsData}, ref) => {
+  ({children, menuItems, menuItemsData}, ref) => {
     const [menuPosition, setMenuPosition] = useState<Position>(null);
 
     const [mouseDownPosition, setMouseDownPosition] = useState<Position>(null);
@@ -40,11 +41,14 @@ const ContextMenu = forwardRef<HTMLDivElement, ContextMenuProps>(
       }
     };
 
-    const menuItems = nestedMenuItemsFromObject({
-      menuItemsData: menuItemsData,
-      isOpen: !!menuPosition,
-      handleClose: handleItemClick,
-    });
+    const menuContents =
+      menuItems ??
+      (menuItemsData &&
+        nestedMenuItemsFromObject({
+          menuItemsData: menuItemsData,
+          isOpen: !!menuPosition,
+          handleClose: handleItemClick,
+        }));
 
     return (
       <div
@@ -60,7 +64,7 @@ const ContextMenu = forwardRef<HTMLDivElement, ContextMenuProps>(
           anchorReference="anchorPosition"
           anchorPosition={menuPosition}
         >
-          {menuItems}
+          {menuContents}
         </Menu>
         {children}
       </div>

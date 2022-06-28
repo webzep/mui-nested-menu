@@ -9,8 +9,14 @@ import SaveIcon from '@mui/icons-material/SaveRounded';
 import AdbIcon from '@mui/icons-material/Adb';
 import FlutterDashIcon from '@mui/icons-material/FlutterDash';
 
-import {ContextMenu, MenuItemData} from '@mui-nested-menu/index';
+import {
+  ContextMenu,
+  IconMenuItem,
+  MenuItemData,
+  NestedMenuItem,
+} from '@mui-nested-menu/index';
 import {ThemeProvider as MTP, createTheme} from '@mui/material/styles';
+import {Divider} from '@mui/material';
 
 const menuItemsData: MenuItemData[] = [
   {
@@ -71,8 +77,46 @@ export const ContextMenuPage = () => {
   return (
     <>
       <PageHeader />
-      <P>When right clicked, it will open a context menu.</P>
+      <P>
+        When right clicked, it will open a context menu. Either provide the
+        <Code>menuItems</Code> prop or the <Code>menuItemsData</Code> prop.
+      </P>
 
+      <Subheading>menuItems</Subheading>
+      <P>
+        <Code>menuItems</Code> allows you to insert other items such as
+        dividers.
+      </P>
+      <SampleBox>
+        <MTP theme={createTheme()}>
+          <ContextMenu
+            menuItems={[
+              <IconMenuItem key="i1" label="Item 1" rightIcon={<NewIcon />} />,
+              <Divider key="i2" />,
+              <IconMenuItem key="i3" label="Item 2" rightIcon={<SaveIcon />} />,
+            ]}
+          >
+            <div>Right Click Me!</div>
+          </ContextMenu>
+        </MTP>
+      </SampleBox>
+      <CodeBlock
+        code={`<ContextMenu
+  menuItems={[
+    <IconMenuItem key="i1" label="Item 1" rightIcon={<NewIcon />} />,
+    <Divider key="i2" />,
+    <IconMenuItem key="i3" label="Item 2" rightIcon={<SaveIcon />} />,
+  ]}
+>
+  <div>Right Click Me!</div>
+</ContextMenu>`}
+      />
+
+      <Subheading>menuItemsData</Subheading>
+      <P>
+        <Code>menuItemsData</Code> allows you to create a menu from an object
+        format. It is more limited in what it can do.
+      </P>
       <SampleBox>
         <MTP theme={createTheme()}>
           <ContextMenu menuItemsData={menuItemsData}>
@@ -85,12 +129,10 @@ export const ContextMenuPage = () => {
   <div>Right Click Me!</div>
 </ContextMenu>`}
       />
-
       <Subheading>Data Structure</Subheading>
       <P>
         The <Code>menuItemsData</Code> variable looks like the following:
       </P>
-
       <CodeBlock
         code={`const menuItemsData: MenuItemData[] = [
   {
