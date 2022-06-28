@@ -90,6 +90,9 @@ export const ContextMenuPage = () => {
       <SampleBox>
         <MTP theme={createTheme()}>
           <ContextMenu
+            ContainerProps={{
+              onMouseDown: () => console.log('ContextMenu Container XX was clicked'),
+            }}
             menuItems={[
               <IconMenuItem key="i1" label="Item 1" rightIcon={<NewIcon />} />,
               <Divider key="i2" />,
