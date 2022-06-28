@@ -15,7 +15,7 @@ export interface NestedMenuItemProps extends Omit<MenuItemProps, 'button'> {
   disabled?: boolean;
   ContainerProps?: React.HTMLAttributes<HTMLElement> &
     React.RefAttributes<HTMLElement | null>;
-  MenuProps?: Omit<MenuProps, 'children'>;
+  MenuProps?: Partial<Omit<MenuProps, 'children'>>;
   button?: true | undefined;
 }
 
@@ -32,6 +32,7 @@ const NestedMenuItem = React.forwardRef<
     className,
     tabIndex: tabIndexProp,
     ContainerProps: ContainerPropsProp = {},
+    MenuProps,
     ...MenuItemProps
   } = props;
 
@@ -149,6 +150,7 @@ const NestedMenuItem = React.forwardRef<
         onClose={() => {
           setIsSubMenuOpen(false);
         }}
+        {...MenuProps}
       >
         <div ref={menuContainerRef} style={{pointerEvents: 'auto'}}>
           {children}
