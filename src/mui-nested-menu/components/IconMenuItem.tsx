@@ -39,7 +39,6 @@ const IconMenuItem = forwardRef<HTMLLIElement, IconMenuItemProps>(
         {...MenuItemProps}
         ref={ref}
         className={className}
-        onClick={onClick}
         {...props}
       >
         <FlexBox>
