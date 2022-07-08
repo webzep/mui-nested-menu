@@ -1,7 +1,8 @@
 import React, {forwardRef, RefObject} from 'react';
 import MenuItem, {MenuItemProps} from '@mui/material/MenuItem';
 import Typography from '@mui/material/Typography';
-import {Box, styled} from '@mui/system';
+import Box from '@mui/system/Box';
+import styled from '@mui/material/styles/styled';
 
 const StyledMenuItem = styled(MenuItem)({
   paddingLeft: '4px',
