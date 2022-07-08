@@ -1,5 +1,5 @@
 import React, {useState, forwardRef} from 'react';
-import {Menu} from '@mui/material';
+import Menu from '@mui/material/Menu';
 import {nestedMenuItemsFromObject} from './nestedMenuItemsFromObject';
 import {MenuItemData} from '../definitions';
 

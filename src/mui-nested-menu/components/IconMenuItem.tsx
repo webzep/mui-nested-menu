@@ -1,5 +1,6 @@
 import React, {forwardRef, RefObject} from 'react';
-import {MenuItem, MenuItemProps, Typography} from '@mui/material';
+import MenuItem, {MenuItemProps} from '@mui/material/MenuItem';
+import Typography from '@mui/material/Typography';
 import {Box, styled} from '@mui/system';
 
 const StyledMenuItem = styled(MenuItem)({
