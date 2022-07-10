@@ -1,6 +1,7 @@
 import React, {useState, useRef, useImperativeHandle} from 'react';
 import {IconMenuItem} from './IconMenuItem';
-import {Menu, MenuItemProps, MenuProps} from '@mui/material';
+import Menu, {MenuProps} from '@mui/material/Menu';
+import {MenuItemProps} from '@mui/material/MenuItem';
 import {ChevronRight} from '../icons/ChevronRight';
 
 export interface NestedMenuItemProps extends Omit<MenuItemProps, 'button'> {

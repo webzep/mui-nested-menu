@@ -1,6 +1,7 @@
 import React from 'react';
 import {nestedMenuItemsFromObject} from './nestedMenuItemsFromObject';
-import {Button, ButtonProps, Menu, MenuProps} from '@mui/material';
+import Button, {ButtonProps} from '@mui/material/Button';
+import Menu, {MenuProps} from '@mui/material/Menu';
 import {ChevronDown} from '../icons/ChevronDown';
 import {MenuItemData} from '..';
 
