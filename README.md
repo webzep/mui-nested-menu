@@ -4,7 +4,7 @@
 
 This package provides components to let you nest menu items infinitely deep. The code is an adaption from <a href="material-ui-nested-menu-item">this package</a> to work with <a href="https://mui.com">MUI version 5</a>.
 
-[Check out the documentation here.](mui-nested-menu.vercel.app/)
+[Check out the documentation here.](https://mui-nested-menu.vercel.app/)
 
 ## 📦 Install
 
