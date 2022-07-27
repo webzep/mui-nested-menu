@@ -23,10 +23,10 @@
     "start": "parcel src/index.html -d ./build --no-source-maps",
     "prune": "ts-prune -i .spec.ts$",
     "format": "prettier --write \"src/**/*.{ts,js,tsx,jsx}\"",
-    "package:build": "parcel build src/index.html -d dist --no-source-maps",
+    "package:build": "tsup src/mui-nested-menu/index.ts --format cjs,esm --dts --clean",
     "package:format": "prettier --write \"src/mui-nested-menu/**/*.{ts,js,tsx,jsx}\"",
     "package:lint": "eslint ./src/mui-nested-menu --ext .ts,.tsx",
-    "pack": "npm run package:format && npm run package:lint && cd src/mui-nested-menu && tsc -p tsconfig.build.json && cd ../.. && cp ./README.md ./dist/README.md && cp ./LICENSE ./dist/LICENSE && cp ./src/mui-nested-menu/template-package.json ./dist/package.json"
+    "pack": "npm run package:format && npm run package:lint && cd src/mui-nested-menu && npm run package:build && cd ../.. && cp ./README.md ./dist/README.md && cp ./LICENSE ./dist/LICENSE && cp ./src/mui-nested-menu/template-package.json ./dist/package.json"
   },
   "dependencies": {
     "@mui/icons-material": "^5.5.1",
