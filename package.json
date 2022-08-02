@@ -13,6 +13,7 @@
   ],
   "author": "Steve Richardson",
   "license": "MIT",
+  "type": "module",
   "scripts": {
     "build": "parcel build src/index.html -d build --no-source-maps",
     "lint": "eslint . --ext .ts,.tsx",
