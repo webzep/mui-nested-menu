@@ -1,4 +1,4 @@
-import React, {useState, forwardRef} from 'react';
+import React, {useState, forwardRef, useRef} from 'react';
 import Menu from '@mui/material/Menu';
 import {nestedMenuItemsFromObject} from './nestedMenuItemsFromObject';
 import {MenuItemData} from '../definitions';
@@ -16,6 +16,10 @@ interface Position {
 
 const ContextMenu = forwardRef<HTMLDivElement, ContextMenuProps>(
   ({children, menuItems, menuItemsData}, ref) => {
+    const wrapperRef =
+      (ref as React.MutableRefObject<HTMLDivElement>) ??
+      useRef<HTMLDivElement>(null);
+
     const [menuPosition, setMenuPosition] = useState<Position>(null);
 
     const [mouseDownPosition, setMouseDownPosition] = useState<Position>(null);
@@ -26,6 +30,18 @@ const ContextMenu = forwardRef<HTMLDivElement, ContextMenuProps>(
       if (menuPosition !== null) setMenuPosition(null);
 
       if (e.button !== 2) return;
+
+      const wrapperBounds = wrapperRef.current.getBoundingClientRect();
+
+      // Check mouse coordinates are inside the rect
+      if (
+        e.clientX < wrapperBounds.left ||
+        e.clientX > wrapperBounds.right ||
+        e.clientY < wrapperBounds.top ||
+        e.clientY > wrapperBounds.bottom
+      ) {
+        return;
+      }
 
       setMouseDownPosition({top: e.clientY, left: e.clientX});
     };
@@ -52,7 +68,7 @@ const ContextMenu = forwardRef<HTMLDivElement, ContextMenuProps>(
 
     return (
       <div
-        ref={ref}
+        ref={wrapperRef}
         onContextMenu={e => e.preventDefault()}
         onMouseDown={handleMouseDown}
         onMouseUp={handleMouseUp}
