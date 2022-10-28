@@ -1,16 +1,17 @@
 {
   "name": "mui-nested-menu",
-  "version": "2.0.0",
+  "description": "Infinitely deep nested menu items for MUI 5.",
+  "version": "2.1.3",
   "homepage": "https://mui-nested-menu.vercel.app/",
-  "description": "Inifintely deep nested menu items for MUI 5.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/steviebaa/mui-nested-menu.git"
+  },
+  "bugs": {
+    "url": "https://github.com/steviebaa/mui-nested-menu/issues"
+  },
   "main": "index.js",
-  "keywords": [
-    "material",
-    "design",
-    "ui",
-    "react",
-    "mui"
-  ],
+  "keywords": ["material", "design", "ui", "react", "mui"],
   "author": "Steve Richardson",
   "license": "MIT",
   "peerDependencies": {
