@@ -10,7 +10,7 @@
   "bugs": {
     "url": "https://github.com/steviebaa/mui-nested-menu/issues"
   },
-  "main": "index.ts",
+  "main": "index.js",
   "keywords": ["material", "design", "ui", "react", "mui"],
   "author": "Steve Richardson",
   "license": "MIT",
