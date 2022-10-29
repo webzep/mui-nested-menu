@@ -1,0 +1,50 @@
+{
+	"name": "mui-nested-menu",
+	"description": "Infinitely deep nested menu items for MUI 5.",
+	"version": "2.1.4",
+	"main": "dist/index.js",
+	"types": "dist/index.d.ts",
+	"homepage": "https://mui-nested-menu.vercel.app/",
+	"author": "Steve Richardson",
+	"license": "MIT",
+	"scripts": {
+		"build": "tsup src/index.ts --format cjs --dts --clean --external react",
+		"clean": "rm -rf dist",
+		"dev": "tsup src/index.ts --format cjs --watch --dts --external react",
+		"lint": "TIMING=1 eslint \"src/**/*.ts*\"",
+		"prepublishOnly": "npm run build"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/steviebaa/mui-nested-menu.git"
+	},
+	"bugs": {
+		"url": "https://github.com/steviebaa/mui-nested-menu/issues"
+	},
+	"keywords": [
+		"material",
+		"design",
+		"ui",
+		"react",
+		"mui"
+	],
+	"devDependencies": {
+		"@mui/material": "^5.0.0",
+		"@types/react": "^17.0.13",
+		"@types/react-dom": "^17.0.8",
+		"eslint": "^8.4.1",
+		"eslint-config-custom": "*",
+		"react": "^17.0.2",
+		"tsconfig": "*",
+		"tsup": "^5.10.1",
+		"typescript": "^4.5.3"
+	},
+	"peerDependencies": {
+		"@mui/material": "^5.0.0"
+	},
+	"dependencies": {
+		"@emotion/react": "^11.0.0",
+		"@emotion/styled": "^11.0.0",
+		"@mui/material": "^5.0.0"
+	}
+}

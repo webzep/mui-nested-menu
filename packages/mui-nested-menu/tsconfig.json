@@ -1,0 +1,11 @@
+{
+	"extends": "tsconfig/react-library.json",
+	"include": ["./src"],
+	"exclude": ["node_modules"],
+	"compilerOptions": {
+		"strict": true,
+		"esModuleInterop": true,
+		"forceConsistentCasingInFileNames": true,
+		"lib": ["dom", "dom.iterable"]
+	}
+}
