@@ -85,6 +85,22 @@ const NestedMenuItem = React.forwardRef<
     }
   };
 
+  const handleBlur = (e: React.FocusEvent<HTMLElement>) => {
+    // If relatedTarget is not a child of the submenu, close the submenu
+    if (e.currentTarget === e.relatedTarget) {
+      e.currentTarget.focus();
+    } else {
+      if (
+        !menuContainerRef.current ||
+        !e.currentTarget ||
+        !e.relatedTarget ||
+        !menuContainerRef.current.contains(e.relatedTarget as Node)
+      ) {
+        setIsSubMenuOpen(false);
+      }
+    }
+  };
+
   const handleKeyDown = (e: React.KeyboardEvent) => {
     if (e.key === 'Escape') {
       return;
@@ -123,6 +139,7 @@ const NestedMenuItem = React.forwardRef<
       {...ContainerProps}
       ref={containerRef}
       onFocus={handleFocus}
+      onBlur={handleBlur}
       tabIndex={tabIndex}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
