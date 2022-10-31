@@ -1,18 +1,24 @@
 {
 	"name": "mui-nested-menu",
 	"description": "Infinitely deep nested menu items for MUI 5.",
-	"version": "2.1.4",
+	"version": "2.2.0",
 	"main": "dist/index.js",
 	"types": "dist/index.d.ts",
 	"homepage": "https://mui-nested-menu.vercel.app/",
 	"author": "Steve Richardson",
 	"license": "MIT",
 	"scripts": {
-		"build": "tsup src/index.ts --format cjs --dts --clean --external react",
+		"build": "tsup src/index.ts --splitting --format cjs --dts --clean --external react",
 		"clean": "rm -rf dist",
 		"dev": "tsup src/index.ts --format cjs --watch --dts --external react",
 		"lint": "TIMING=1 eslint \"src/**/*.ts*\"",
-		"prepublishOnly": "npm run build"
+		"copy": "cp ../../README.md ./dist/README.md && cp ../../LICENSE ./dist/LICENSE && cp ./package.template.json ./dist/package.json",
+		"version:currentpackage": "npm pkg set 'version'=$(npm view mui-nested-menu version)",
+		"version:currenttemplate": "npx -yes json -I -f package.template.json -e 'this.version=\"$(jq -r '.version' package.json)\"'",
+		"prepare": "npm run version:currentpackage",
+		"postversion": "npm run version:currenttemplate",
+		"dist": "npm run clean && npm run lint && npm run build && npm run copy",
+		"prepublish": "npm run dist"
 	},
 	"repository": {
 		"type": "git",

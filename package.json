@@ -5,10 +5,12 @@
     "packages/*"
   ],
   "scripts": {
+    "docs": "yarn workspace docs",
+    "menu": "yarn workspace mui-nested-menu",
     "build": "turbo run build",
     "clean": "turbo run clean",
     "dev": "turbo run dev --no-cache --parallel --continue",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "format": "prettier --write \"**/*.{ts,tsx,md,json}\"",
     "lint": "turbo run lint"
   },
   "devDependencies": {

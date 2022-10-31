@@ -7,5 +7,6 @@
 		"esModuleInterop": true,
 		"forceConsistentCasingInFileNames": true,
 		"lib": ["dom", "dom.iterable"]
-	}
+	},
+	
 }
