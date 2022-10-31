@@ -5,5 +5,5 @@ npm run prepare
 
 npm version [major|minor|patch]
 
-npm publish
+npm run release
 ```
