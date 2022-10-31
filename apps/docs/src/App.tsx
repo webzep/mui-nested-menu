@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { SettingsProvider } from 'stores/SettingsContext';
 import { ThemeProvider } from 'core/Theme';
 import { createSectionRoutes } from 'core/routeMap';
-import { Home } from 'controllers/Home';
+import { Home } from 'pages/HomeLayout';
 import { SnackbarProvider } from 'themestress/components';
 
 export const App: React.FC = () => {
