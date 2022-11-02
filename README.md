@@ -39,3 +39,7 @@ Pull requests for <a href="https://github.com/steviebaa/mui-nested-menu">the pro
 3. Create a new branch
 4. Make your changes
 5. Open a pull request
+
+## Changelog
+
+### 3.0: Support for ESM and CJS modules
