@@ -9,8 +9,8 @@ import NewIcon from '@mui/icons-material/InsertDriveFileOutlined';
 import SaveIcon from '@mui/icons-material/SaveRounded';
 import SaveAsIcon from '@mui/icons-material/SaveOutlined';
 import ImportExportRoundedIcon from '@mui/icons-material/ImportExportRounded';
-import { NestedDropdown } from 'mui-nested-menu-staging/module';
-import { MenuItemData } from 'mui-nested-menu-staging/module';
+import { NestedDropdown } from 'mui-nested-menu';
+import { MenuItemData } from 'mui-nested-menu';
 
 const menuItemsData: MenuItemData = {
 	label: 'File',

@@ -2,7 +2,6 @@
 	"name": "docs",
 	"version": "0.0.0",
 	"private": true,
-	"type": "module",
 	"scripts": {
 		"start": "react-scripts start",
 		"dev": "PORT=3001 react-scripts start",

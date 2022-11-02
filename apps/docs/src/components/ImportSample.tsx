@@ -17,7 +17,7 @@ export const PageHeader = ({ importCode: code }: ImportSampleProps) => {
 			<Subheading>Import</Subheading>
 
 			<CodeBlock
-				code={code ?? `import {${info?.name}} from 'mui-nested-menu-staging';`}
+				code={code ?? `import {${info?.name}} from 'mui-nested-menu';`}
 			/>
 
 			<Subheading>Overview</Subheading>
