@@ -34,9 +34,8 @@ The following items and interfaces are exported from the package:
 
 Pull requests for <a href="https://github.com/steviebaa/mui-nested-menu">the project</a> are more than welcome. Please make sure to stick to the coding style used throughout the project.
 
-1. Clone the project from GitHub
-2. Create a new branch
-3. Make your changes
-4. Commit your changes
-5. Push your changes to the branch
-6. Open a pull request
+1. Clone the project from GitHub - it is a monorepo.
+2. `yarn && yarn start` and you should see the docs on `localhost:3001`.
+3. Create a new branch
+4. Make your changes
+5. Open a pull request

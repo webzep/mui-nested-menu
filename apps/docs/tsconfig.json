@@ -1,0 +1,7 @@
+{
+	"extends": "tsconfig/react-app.json",
+	"include": ["src"],
+	"compilerOptions": {
+		"baseUrl": "src"
+	}
+}

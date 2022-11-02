@@ -1,0 +1,18 @@
+{
+	"compilerOptions": {
+		"module": "commonjs",
+		"target": "es5",
+		"downlevelIteration": true,
+
+		"jsx": "react",
+		"declaration": true,
+		"esModuleInterop": true,
+		"preserveSymlinks": true,
+
+		"types": ["node"],
+		"lib": ["es2015", "DOM", "DOM.Iterable"],
+		"skipLibCheck": true
+	},
+	"exclude": ["node_modules", ".git"],
+	"include": ["src"]
+}

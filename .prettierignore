@@ -1,5 +1,0 @@
-*.json
-.cache
-build
-coverage
-node_modules
