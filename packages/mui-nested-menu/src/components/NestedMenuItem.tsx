@@ -40,7 +40,7 @@ const NestedMenuItem = React.forwardRef<
 	const { ref: containerRefProp, ...ContainerProps } = ContainerPropsProp;
 
 	const menuItemRef = useRef<HTMLLIElement | null>(null);
-	useImperativeHandle(ref, () => menuItemRef.current!);
+	useImperativeHandle(ref, () => menuItemRef.current);
 
 	const containerRef = useRef<HTMLDivElement | null>(null);
 	useImperativeHandle(containerRefProp, () => containerRef.current);
@@ -67,7 +67,7 @@ const NestedMenuItem = React.forwardRef<
 	// Check if any immediate children are active
 	const isSubmenuFocused = () => {
 		const active = containerRef.current?.ownerDocument.activeElement ?? null;
-		for (const child of menuContainerRef!.current!.children) {
+		for (const child of menuContainerRef.current.children) {
 			if (child === active) {
 				return true;
 			}

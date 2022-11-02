@@ -10,7 +10,7 @@ import { ThemeProvider as MTP, createTheme } from '@mui/material/styles';
 import ArrowDownIcon from '@mui/icons-material/KeyboardArrowDownRounded';
 import AdbIcon from '@mui/icons-material/Adb';
 import FlutterDashIcon from '@mui/icons-material/FlutterDash';
-import { IconMenuItem } from 'mui-nested-menu';
+import { IconMenuItem } from 'mui-nested-menu-staging/module';
 
 export const IconMenuItemPage = () => {
 	const [anchorEl, setAnchorEl] = React.useState<Element | null>(null);

@@ -1,21 +1,28 @@
 {
-  "private": true,
-  "workspaces": [
-    "apps/*",
-    "packages/*"
-  ],
-  "scripts": {
-    "docs": "yarn workspace docs",
-    "menu": "yarn workspace mui-nested-menu",
-    "build": "turbo run build",
-    "clean": "turbo run clean",
-    "dev": "turbo run dev --no-cache --parallel --continue",
-    "format": "prettier --write \"**/*.{ts,tsx,md,json}\"",
-    "lint": "turbo run lint"
-  },
-  "devDependencies": {
-    "eslint": "^8.4.1",
-    "prettier": "^2.5.1",
-    "turbo": "latest"
-  }
+	"private": true,
+	"workspaces": [
+		"apps/*",
+		"packages/*"
+	],
+	"scripts": {
+		"docs": "yarn workspace docs",
+		"menu": "yarn workspace mui-nested-menu",
+		"build": "turbo run build",
+		"clean": "turbo run clean",
+		"dev": "turbo run dev --no-cache --parallel --continue",
+		"format": "prettier --write \"**/*.{ts,tsx,md,json}\"",
+		"lint": "turbo run lint"
+	},
+	"devDependencies": {
+		"@parcel/packager-ts": "2.7.0",
+		"@parcel/transformer-typescript-types": "2.7.0",
+		"eslint": "^8.4.1",
+		"prettier": "^2.5.1",
+		"turbo": "latest",
+		"typescript": "4.7.2"
+	},
+"resolutions": {
+	"typescript": "~4.7",
+	"react": "17.0.2"
+}
 }

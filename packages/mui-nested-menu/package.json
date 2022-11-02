@@ -1,14 +1,16 @@
 {
 	"name": "mui-nested-menu",
 	"description": "Infinitely deep nested menu items for MUI 5.",
-	"version": "2.2.0",
+	"version": "2.1.4",
+	"source": "src/index.ts",
 	"main": "dist/index.js",
+	"module": "dist/module.js",
 	"types": "dist/index.d.ts",
 	"homepage": "https://mui-nested-menu.vercel.app/",
 	"author": "Steve Richardson",
 	"license": "MIT",
 	"scripts": {
-		"build": "tsup src/index.ts --splitting --format cjs --dts --clean --external react",
+		"build": "parcel build --no-optimize --no-source-maps --no-content-hash --target",
 		"clean": "rm -rf dist",
 		"dev": "tsup src/index.ts --format cjs --watch --dts --external react",
 		"lint": "TIMING=1 eslint \"src/**/*.ts*\"",
@@ -35,13 +37,18 @@
 		"mui"
 	],
 	"devDependencies": {
-		"eslint": "^8.4.1",
+		"eslint": "^8.26.0",
 		"eslint-config-custom": "*",
+		"parcel": "^2.7.0",
 		"tsconfig": "*",
-		"tsup": "^5.10.1",
-		"typescript": "^4.5.3"
+		"typescript": "4.7.2"
 	},
-	"peerDependencies": {
-		"@mui/material": "^5.0.0"
+	"dependencies": {
+		"@emotion/react": "^11.10.5",
+		"@emotion/styled": "^11.10.5",
+		"@mui/material": "^5.0.0",
+		"@mui/system": "^5.10.12",
+		"react": "^18.2.0",
+		"react-dom": "^18.2.0"
 	}
 }

@@ -1,4 +1,11 @@
-import React, { Dispatch, SetStateAction, useState, useEffect } from 'react';
+import React, {
+	Dispatch,
+	SetStateAction,
+	useState,
+	useEffect,
+	createContext,
+	ReactNode,
+} from 'react';
 import { useMediaQuery } from 'themestress/core';
 
 interface SettingsProps {
@@ -10,11 +17,9 @@ export type SettingsContextProps = [
 	setState: Dispatch<SetStateAction<SettingsProps>>
 ];
 
-export const settingsContext = React.createContext<SettingsContextProps | null>(
-	null
-);
+export const settingsContext = createContext<SettingsContextProps | null>(null);
 
-export const SettingsProvider = (props: { children: React.ReactNode }) => {
+export const SettingsProvider = (props: { children: ReactNode }) => {
 	const prefersDark = useMediaQuery('(prefers-color-scheme: dark)');
 	const [state, setState] = useState<SettingsProps>({
 		mode: prefersDark ? 'dark' : 'light',

@@ -1,26 +1,37 @@
 {
-  "name": "mui-nested-menu",
-  "description": "Infinitely deep nested menu items for MUI 5.",
-  "version": "2.2.0",
-  "homepage": "https://mui-nested-menu.vercel.app/",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/steviebaa/mui-nested-menu.git"
-  },
-  "bugs": {
-    "url": "https://github.com/steviebaa/mui-nested-menu/issues"
-  },
-  "main": "index.js",
-  "keywords": [
-    "material",
-    "design",
-    "ui",
-    "react",
-    "mui"
-  ],
-  "author": "Steve Richardson",
-  "license": "MIT",
-  "peerDependencies": {
-    "@mui/material": "^5.0.0"
-  }
+	"name": "mui-nested-menu",
+	"description": "Infinitely deep nested menu items for MUI 5.",
+	"version": "2.2.0",
+	"homepage": "https://mui-nested-menu.vercel.app/",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/steviebaa/mui-nested-menu.git"
+	},
+	"bugs": {
+		"url": "https://github.com/steviebaa/mui-nested-menu/issues"
+	},
+	"main": "index.js",
+	"module": "module.js",
+	"keywords": ["material", "design", "ui", "react", "mui"],
+	"author": "Steve Richardson",
+	"license": "MIT",
+	"peerDependencies": {
+		"@mui/material": "^5.0.0",
+		"@emotion/react": "^11.5.0",
+		"@emotion/styled": "^11.3.0",
+		"@types/react": "^17.0.0 || ^18.0.0",
+		"react": "^17.0.0 || ^18.0.0",
+		"react-dom": "^17.0.0 || ^18.0.0"
+	},
+	"peerDependenciesMeta": {
+		"@types/react": {
+			"optional": true
+		},
+		"@emotion/react": {
+			"optional": true
+		},
+		"@emotion/styled": {
+			"optional": true
+		}
+	}
 }

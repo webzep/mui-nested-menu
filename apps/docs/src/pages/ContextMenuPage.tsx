@@ -9,7 +9,11 @@ import SaveIcon from '@mui/icons-material/SaveRounded';
 import AdbIcon from '@mui/icons-material/Adb';
 import FlutterDashIcon from '@mui/icons-material/FlutterDash';
 
-import { ContextMenu, IconMenuItem, MenuItemData } from 'mui-nested-menu';
+import {
+	ContextMenu,
+	IconMenuItem,
+	MenuItemData,
+} from 'mui-nested-menu-staging/module';
 import { ThemeProvider as MTP, createTheme } from '@mui/material/styles';
 import { Divider } from '@mui/material';
 

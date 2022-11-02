@@ -3,7 +3,7 @@ import { nestedMenuItemsFromObject } from './nestedMenuItemsFromObject';
 import Button, { ButtonProps } from '@mui/material/Button';
 import Menu, { MenuProps } from '@mui/material/Menu';
 import { ChevronDown } from '../icons/ChevronDown';
-import { MenuItemData } from '..';
+import { MenuItemData } from '../definitions';
 
 interface NestedDropdownProps {
 	children?: React.ReactNode;

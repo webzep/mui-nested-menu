@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
 import { Route } from 'react-router';
 
 // Pages
@@ -11,7 +11,7 @@ import { NavigationItem } from 'themestress/components';
 
 export const getPageFromRoute = (
 	route: string
-): { name: string; page: React.ReactNode } | null => {
+): { name: string; page: ReactNode } | null => {
 	let page = null;
 
 	Object.entries(componentsRouteMap).forEach(([pageSlug, info]) => {
@@ -38,7 +38,7 @@ export const getRoutesList = () => {
 };
 
 export const getMenuItems = (handleClick: (slug: string) => void) => {
-	const items: React.ReactNode[] = [];
+	const items: ReactNode[] = [];
 	Object.entries(componentsRouteMap).forEach(([pageSlug, info]) => {
 		items.push(
 			<NavigationItem key={pageSlug} onClick={() => handleClick(`${pageSlug}`)}>
@@ -50,7 +50,7 @@ export const getMenuItems = (handleClick: (slug: string) => void) => {
 };
 
 export const createSectionRoutes = () => {
-	const routes: React.ReactNode[] = [];
+	const routes: ReactNode[] = [];
 	Object.entries(componentsRouteMap).forEach(([route, info]) => {
 		routes.push(<Route key={route} path={route} element={info.page} />);
 	});

@@ -4,7 +4,7 @@ import { SampleBox } from 'components/SampleBox';
 import { CodeBlock } from 'components/CodeBlock';
 import { PageHeader } from 'components/ImportSample';
 
-import { IconMenuItem, NestedMenuItem } from 'mui-nested-menu';
+import { IconMenuItem, NestedMenuItem } from 'mui-nested-menu-staging/module';
 
 import { Button, Menu, MenuItem } from '@mui/material';
 import { ThemeProvider as MTP, createTheme } from '@mui/material/styles';

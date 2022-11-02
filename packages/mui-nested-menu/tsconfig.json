@@ -1,12 +1,18 @@
 {
-	"extends": "tsconfig/react-library.json",
-	"include": ["./src"],
-	"exclude": ["node_modules"],
 	"compilerOptions": {
-		"strict": true,
+		"module": "commonjs",
+		"target": "es5",
+		"downlevelIteration": true,
+
+		"jsx": "react",
+		"declaration": true,
 		"esModuleInterop": true,
-		"forceConsistentCasingInFileNames": true,
-		"lib": ["dom", "dom.iterable"]
+		"preserveSymlinks": true,
+
+		"types": ["node"],
+		"lib": ["es2015", "DOM", "DOM.Iterable"],
+		"skipLibCheck": true
 	},
-	
+	"exclude": ["node_modules", ".git"],
+	"include": ["src"]
 }
