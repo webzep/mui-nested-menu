@@ -11,7 +11,8 @@
 		"clean": "turbo run clean",
 		"dev": "turbo run dev --no-cache --parallel --continue",
 		"format": "prettier --write \"**/*.{ts,tsx,md,json}\"",
-		"lint": "turbo run lint"
+		"lint": "turbo run lint",
+		"postinstall": "yarn menu dist"
 	},
 	"devDependencies": {
 		"@parcel/packager-ts": "2.7.0",
