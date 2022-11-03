@@ -7,7 +7,7 @@ import { MenuItemData } from '../definitions';
 
 interface NestedDropdownProps {
 	children?: React.ReactNode;
-	menuItemsData?: MenuItemData;
+	menuItemsData?: MenuItemData[];
 	onClick?: (e: React.MouseEvent<HTMLButtonElement>) => void;
 	ButtonProps?: Partial<ButtonProps>;
 	MenuProps?: Partial<MenuProps>;
