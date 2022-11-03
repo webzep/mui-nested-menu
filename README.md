@@ -40,6 +40,9 @@ Pull requests for <a href="https://github.com/steviebaa/mui-nested-menu">the pro
 4. Make your changes
 5. Open a pull request
 
-## Changelog
+## 📝 Changelog
 
-### 3.0: Support for ESM and CJS modules
+| Version | Breaking | Changes |
+| ------- | ------- | ------- |
+| 3.0.0 | no | Support for ESM and CJS modules. |
+| 3.1.0 | yes | Make disabled ans SX props available. Fixes typo `nesteMenuItemsFromObjectProps` to `nestedMenuItemsFromObjectProps`. |

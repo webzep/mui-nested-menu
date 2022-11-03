@@ -5,5 +5,9 @@ npm run prepare
 
 npm version [major|minor|patch]
 
-npm run release
+npm run dist
+
+cd ./dist
+
+npm publish
 ```

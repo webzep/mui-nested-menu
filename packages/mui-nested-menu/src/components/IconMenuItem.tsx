@@ -3,7 +3,7 @@ import MenuItem, { MenuItemProps } from '@mui/material/MenuItem';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/system/Box';
 import styled from '@mui/material/styles/styled';
-import { SxProps } from '@mui/system/styleFunctionSx';
+import { SxProps } from '@mui/system/styleFunctionSx/styleFunctionSx';
 
 const StyledMenuItem = styled(MenuItem)({
 	paddingLeft: '4px',
