@@ -1,3 +1,5 @@
+import { SxProps } from '@mui/system/styleFunctionSx';
+
 export interface MenuItemData {
   uid?: string;
   label?: string;
@@ -5,4 +7,6 @@ export interface MenuItemData {
   rightIcon?: React.ReactNode;
   callback?: () => void;
   items?: MenuItemData[];
+  disabled?: boolean;
+  sx?: SxProps;
 }

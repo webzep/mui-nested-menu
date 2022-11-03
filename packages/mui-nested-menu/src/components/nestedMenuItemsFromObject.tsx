@@ -3,7 +3,7 @@ import { NestedMenuItem } from './NestedMenuItem';
 import { IconMenuItem } from './IconMenuItem';
 import { MenuItemData } from '../definitions';
 
-export interface nesteMenuItemsFromObjectProps {
+export interface nestedMenuItemsFromObjectProps {
 	menuItemsData: MenuItemData[];
 	isOpen: boolean;
 	handleClose: () => void;
@@ -17,9 +17,9 @@ export function nestedMenuItemsFromObject({
 	menuItemsData: items,
 	isOpen,
 	handleClose,
-}: nesteMenuItemsFromObjectProps) {
+}: nestedMenuItemsFromObjectProps) {
 	return items.map((item) => {
-		const { leftIcon, rightIcon, label, items, callback } = item;
+		const { leftIcon, rightIcon, label, items, callback, sx, disabled } = item;
 
 		if (items && items.length > 0) {
 			// Recurse deeper
@@ -30,6 +30,8 @@ export function nestedMenuItemsFromObject({
 					rightIcon={rightIcon}
 					label={label}
 					parentMenuOpen={isOpen}
+					sx={sx}
+					disabled={disabled}
 				>
 					{/* Call this function to nest more items */}
 					{nestedMenuItemsFromObject({
@@ -51,6 +53,8 @@ export function nestedMenuItemsFromObject({
 						handleClose();
 						callback && callback();
 					}}
+					sx={sx}
+					disabled={disabled}
 				/>
 			);
 		}

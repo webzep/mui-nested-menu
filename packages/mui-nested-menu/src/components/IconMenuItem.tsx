@@ -3,6 +3,7 @@ import MenuItem, { MenuItemProps } from '@mui/material/MenuItem';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/system/Box';
 import styled from '@mui/material/styles/styled';
+import { SxProps } from '@mui/system/styleFunctionSx';
 
 const StyledMenuItem = styled(MenuItem)({
 	paddingLeft: '4px',
@@ -29,6 +30,8 @@ interface IconMenuItemProps {
 	className?: string;
 	MenuItemProps?: MenuItemProps;
 	ref?: RefObject<HTMLLIElement>;
+	disabled?: boolean;
+	sx?: SxProps;
 }
 
 const IconMenuItem = forwardRef<HTMLLIElement, IconMenuItemProps>(

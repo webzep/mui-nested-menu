@@ -38,6 +38,7 @@ const menuItemsData: MenuItemData = {
 					label: 'Option 2',
 					leftIcon: <SaveAsIcon />,
 					callback: () => console.log('Save As > Option 2 clicked'),
+					disabled: true,
 				},
 			],
 		},
@@ -53,6 +54,7 @@ const menuItemsData: MenuItemData = {
 							label: 'Option 1',
 							rightIcon: <SaveAsIcon />,
 							callback: () => console.log('Export > FT1 > O1 clicked'),
+							sx: { color: '#FF0000' },
 						},
 						{
 							label: 'Option 2',
@@ -131,6 +133,7 @@ export const NestedDropdownPage = () => {
           label: 'Option 2',
           leftIcon: <SaveAsIcon />,
           callback: () => console.log('Save As > Option 2 clicked'),
+          disabled: true,
         },
       ],
     },
@@ -146,6 +149,7 @@ export const NestedDropdownPage = () => {
               label: 'Option 1',
               rightIcon: <SaveAsIcon />,
               callback: () => console.log('Export > FT1 > O1 clicked'),
+              sx: { color: '#FF0000' },
             },
             {
               label: 'Option 2',
