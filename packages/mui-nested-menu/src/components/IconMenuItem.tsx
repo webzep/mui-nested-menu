@@ -25,7 +25,7 @@ const FlexBox = styled(Box)({
 interface IconMenuItemProps {
 	leftIcon?: React.ReactNode;
 	rightIcon?: React.ReactNode;
-	onClick?: () => void;
+	onClick?: (event: React.MouseEvent<HTMLElement>) => void;
 	label?: string;
 	className?: string;
 	MenuItemProps?: MenuItemProps;

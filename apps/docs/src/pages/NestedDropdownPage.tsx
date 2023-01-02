@@ -18,12 +18,18 @@ const menuItemsData: MenuItemData = {
 		{
 			label: 'New',
 			leftIcon: <NewIcon />,
-			callback: () => console.log('New clicked'),
+			callback: (
+				event: React.MouseEvent<HTMLElement>,
+				item: MenuItemData
+			) => console.log('New clicked', event, item),
 		},
 		{
 			label: 'Save',
 			leftIcon: <SaveIcon />,
-			callback: () => console.log('Save clicked'),
+			callback: (
+				event: React.MouseEvent<HTMLElement>,
+				item: MenuItemData
+			) => console.log('Save clicked', event, item),
 		},
 		{
 			label: 'Save As',
@@ -32,12 +38,18 @@ const menuItemsData: MenuItemData = {
 				{
 					label: 'Option 1',
 					rightIcon: <SaveAsIcon />,
-					callback: () => console.log('Save As > Option 1 clicked'),
+					callback: (
+						event: React.MouseEvent<HTMLElement>,
+						item: MenuItemData
+					) => console.log('Save As > Option 1 clicked'),
 				},
 				{
 					label: 'Option 2',
 					leftIcon: <SaveAsIcon />,
-					callback: () => console.log('Save As > Option 2 clicked'),
+					callback: (
+						event: React.MouseEvent<HTMLElement>,
+						item: MenuItemData
+					) => console.log('Save As > Option 2 clicked'),
 					disabled: true,
 				},
 			],
@@ -53,21 +65,28 @@ const menuItemsData: MenuItemData = {
 						{
 							label: 'Option 1',
 							rightIcon: <SaveAsIcon />,
-							callback: () =>
-								console.log('Export > FT1 > O1 clicked'),
+							callback: (
+								event: React.MouseEvent<HTMLElement>,
+								item: MenuItemData
+							) => console.log('Export > FT1 > O1 clicked'),
 							sx: { color: '#FF0000' },
 						},
 						{
 							label: 'Option 2',
 							leftIcon: <SaveAsIcon />,
-							callback: () =>
-								console.log('Export > FT1 > O2 clicked'),
+							callback: (
+								event: React.MouseEvent<HTMLElement>,
+								item: MenuItemData
+							) => console.log('Export > FT1 > O2 clicked'),
 						},
 					],
 				},
 				{
 					label: 'File Type 2',
-					callback: () => console.log('Export > FT2 clicked'),
+					callback: (
+						event: React.MouseEvent<HTMLElement>,
+						item: MenuItemData
+					) => console.log('Export > FT2 clicked'),
 				},
 			],
 		},
@@ -117,12 +136,12 @@ export const NestedDropdownPage = () => {
     {
       label: 'New',
       leftIcon: <NewIcon />,
-      callback: () => console.log('New clicked'),
+      callback: (event, item) => console.log('New clicked', event, item),
     },
     {
       label: 'Save',
       leftIcon: <SaveIcon />,
-      callback: () => console.log('Save clicked'),
+      callback: (event, item) => console.log('Save clicked', event, item),
     },
     {
       label: 'Save As',
@@ -131,12 +150,12 @@ export const NestedDropdownPage = () => {
         {
           label: 'Option 1',
           rightIcon: <SaveAsIcon />,
-          callback: () => console.log('Save As > Option 1 clicked'),
+          callback: (event, item) => console.log('Save As > Option 1 clicked', event, item),
         },
         {
           label: 'Option 2',
           leftIcon: <SaveAsIcon />,
-          callback: () => console.log('Save As > Option 2 clicked'),
+          callback: (event, item) => console.log('Save As > Option 2 clicked', event, item),
           disabled: true,
         },
       ],
@@ -152,19 +171,19 @@ export const NestedDropdownPage = () => {
             {
               label: 'Option 1',
               rightIcon: <SaveAsIcon />,
-              callback: () => console.log('Export > FT1 > O1 clicked'),
+              callback: (event, item) => console.log('Export > FT1 > O1 clicked', event, item),
               sx: { color: '#FF0000' },
             },
             {
               label: 'Option 2',
               leftIcon: <SaveAsIcon />,
-              callback: () => console.log('Export > FT1 > O2 clicked'),
+              callback: (event, item) => console.log('Export > FT1 > O2 clicked', event, item),
             },
           ],
         },
         {
           label: 'File Type 2',
-          callback: () => console.log('Export > FT2 clicked'),
+          callback: (event, item) => console.log('Export > FT2 clicked', event, item),
         },
       ],
     },
