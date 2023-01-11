@@ -44,7 +44,11 @@ export const NestedDropdown = React.forwardRef<
 
 	return (
 		<div ref={ref} {...rest}>
-			<Button onClick={handleClick} endIcon={<ChevronDown />} {...ButtonProps}>
+			<Button
+				onClick={handleClick}
+				endIcon={<ChevronDown />}
+				{...ButtonProps}
+			>
 				{data?.label ?? 'Menu'}
 			</Button>
 			<Menu

@@ -66,7 +66,8 @@ const NestedMenuItem = React.forwardRef<
 
 	// Check if any immediate children are active
 	const isSubmenuFocused = () => {
-		const active = containerRef.current?.ownerDocument.activeElement ?? null;
+		const active =
+			containerRef.current?.ownerDocument.activeElement ?? null;
 		for (const child of menuContainerRef.current.children) {
 			if (child === active) {
 				return true;

@@ -13,13 +13,13 @@ export const SampleBox: React.FC<SampleBoxProps> = ({
 }: SampleBoxProps) => {
 	return (
 		<Surface
-			variant='outlined'
+			variant="outlined"
 			padding={6}
 			radius={4}
 			bgColor={contrast ? 'var(--sys-color-inverse-on-surface)' : ''}
 			{...props}
 		>
-			<Flex justifyContent='space-around' {...props}>
+			<Flex justifyContent="space-around" {...props}>
 				{children}
 			</Flex>
 		</Surface>

@@ -4,10 +4,10 @@ import { Typography, TypographyProps } from 'themestress/components';
 
 export const P = styled((props: TypographyProps) => (
 	<Typography
-		variant='body-medium'
+		variant="body-medium"
 		{...props}
 		marginBottom={3}
-		fontSize='16px'
+		fontSize="16px"
 	/>
 ))`
 	margin-bottom: ${({ theme }) => `${theme.spacing.size * 6}px`};
@@ -15,11 +15,11 @@ export const P = styled((props: TypographyProps) => (
 
 export const Code = styled((props: TypographyProps) => (
 	<Typography
-		variant='label-small'
-		element='span'
-		fontSize='1rem'
-		fontColor='var(--sys-color-on-secondary-container)'
-		bgColor='var(--sys-color-secondary-container)'
+		variant="label-small"
+		element="span"
+		fontSize="1rem"
+		fontColor="var(--sys-color-on-secondary-container)"
+		bgColor="var(--sys-color-secondary-container)"
 		{...props}
 	/>
 ))`

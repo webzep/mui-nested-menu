@@ -48,7 +48,10 @@ export const Home = () => {
 		<Flex column>
 			<Navbar />
 			<StyledPage>
-				<StyledMenuSurface padding={6} bgColor='var(--sys-color-surface)'>
+				<StyledMenuSurface
+					padding={6}
+					bgColor="var(--sys-color-surface)"
+				>
 					<NavigationRail
 						selected={menuIndex}
 						onTabChanged={(i) => setMenuIndex(i)}
@@ -59,9 +62,9 @@ export const Home = () => {
 				</StyledMenuSurface>
 
 				<StyledScrollable
-					width='100%'
+					width="100%"
 					padding={10}
-					bgColor='var(--sys-color-surface)'
+					bgColor="var(--sys-color-surface)"
 				>
 					<Container>
 						<Outlet />

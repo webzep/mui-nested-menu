@@ -22,9 +22,8 @@ const ContextMenu = forwardRef<HTMLDivElement, ContextMenuProps>(
 
 		const [menuPosition, setMenuPosition] = useState<Position | null>(null);
 
-		const [mouseDownPosition, setMouseDownPosition] = useState<Position | null>(
-			null
-		);
+		const [mouseDownPosition, setMouseDownPosition] =
+			useState<Position | null>(null);
 
 		const handleItemClick = () => setMenuPosition(null);
 
@@ -54,7 +53,10 @@ const ContextMenu = forwardRef<HTMLDivElement, ContextMenuProps>(
 
 			if (mouseDownPosition === null) return;
 
-			if (mouseDownPosition.top === top && mouseDownPosition.left === left) {
+			if (
+				mouseDownPosition.top === top &&
+				mouseDownPosition.left === left
+			) {
 				setMenuPosition({ top: e.clientY, left: e.clientX });
 			}
 		};
@@ -80,7 +82,7 @@ const ContextMenu = forwardRef<HTMLDivElement, ContextMenuProps>(
 						onContextMenu={(e) => e.preventDefault()}
 						open={!!menuPosition}
 						onClose={() => setMenuPosition(null)}
-						anchorReference='anchorPosition'
+						anchorReference="anchorPosition"
 						anchorPosition={menuPosition}
 					>
 						{menuContents}

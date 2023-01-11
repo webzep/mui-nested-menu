@@ -53,13 +53,15 @@ const menuItemsData: MenuItemData = {
 						{
 							label: 'Option 1',
 							rightIcon: <SaveAsIcon />,
-							callback: () => console.log('Export > FT1 > O1 clicked'),
+							callback: () =>
+								console.log('Export > FT1 > O1 clicked'),
 							sx: { color: '#FF0000' },
 						},
 						{
 							label: 'Option 2',
 							leftIcon: <SaveAsIcon />,
-							callback: () => console.log('Export > FT1 > O2 clicked'),
+							callback: () =>
+								console.log('Export > FT1 > O2 clicked'),
 						},
 					],
 				},
@@ -77,9 +79,10 @@ export const NestedDropdownPage = () => {
 		<>
 			<PageHeader />
 			<P>
-				You can create an object with the structure seen below and pass it as
-				the <Code>menuItemsData</Code> prop of the <Code>NestedDropdown</Code>{' '}
-				component. Make it as deep as you like.
+				You can create an object with the structure seen below and pass
+				it as the <Code>menuItemsData</Code> prop of the{' '}
+				<Code>NestedDropdown</Code> component. Make it as deep as you
+				like.
 			</P>
 
 			<SampleBox>
@@ -103,7 +106,8 @@ export const NestedDropdownPage = () => {
 
 			<Subheading>Data Structure</Subheading>
 			<P>
-				The <Code>menuItemsData</Code> variable looks like the following:
+				The <Code>menuItemsData</Code> variable looks like the
+				following:
 			</P>
 
 			<CodeBlock

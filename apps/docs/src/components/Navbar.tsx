@@ -30,26 +30,26 @@ export const Navbar = () => {
 	};
 
 	return (
-		<StyledNavbar bgColor='var(--sys-color-surface)'>
+		<StyledNavbar bgColor="var(--sys-color-surface)">
 			<Flex
-				height='100%'
+				height="100%"
 				row
-				alignItems='center'
+				alignItems="center"
 				paddingLeft={6}
-				justifyContent='space-between'
+				justifyContent="space-between"
 			>
 				<Typography
-					variant='headline-small'
-					element='span'
+					variant="headline-small"
+					element="span"
 					margin={0}
-					fontColor='var(--sys-color-tertiary)'
+					fontColor="var(--sys-color-tertiary)"
 					weight={500}
 				>
 					MUI Nested Menu
 				</Typography>
-				<Flex alignItems='center' marginRight={4}>
+				<Flex alignItems="center" marginRight={4}>
 					<Typography>Dark Mode</Typography>
-					<Spacer size='8px' />
+					<Spacer size="8px" />
 					<Switch checked={darkMode} onChange={handleSwitchToggle} />
 				</Flex>
 			</Flex>

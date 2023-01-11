@@ -10,7 +10,8 @@ export const Css: React.FC<CssProps> = ({ fontSize }: CssProps) => {
 		<Global
 			styles={css`
 				:root {
-					font-family: 'Montserrat', 'Roboto', Helvetica, Arial, sans-serif;
+					font-family: 'Montserrat', 'Roboto', Helvetica, Arial,
+						sans-serif;
 					font-size: ${fontSize}px;
 					box-sizing: border-box;
 

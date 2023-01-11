@@ -28,47 +28,55 @@ export const NestedMenuItemPage = () => {
 			<PageHeader />
 
 			<P>
-				You can manually nest items by wrapping the <Code>IconMenuItem</Code> or
-				the standard <Code>MenuItem</Code> in the <Code>NestedMenuItem</Code>{' '}
-				component.
+				You can manually nest items by wrapping the{' '}
+				<Code>IconMenuItem</Code> or the standard <Code>MenuItem</Code>{' '}
+				in the <Code>NestedMenuItem</Code> component.
 			</P>
 
 			<SampleBox>
 				<MTP theme={createTheme()}>
 					<div>
 						<Button
-							variant='contained'
+							variant="contained"
 							onClick={handleClick}
 							endIcon={<ArrowDownIcon />}
 						>
 							Click Me!
 						</Button>
-						<Menu anchorEl={anchorEl} open={open} onClose={handleClose}>
+						<Menu
+							anchorEl={anchorEl}
+							open={open}
+							onClose={handleClose}
+						>
 							<NestedMenuItem
 								leftIcon={<AdbIcon />}
 								rightIcon={<FlutterDashIcon />}
-								label='Top Level'
+								label="Top Level"
 								parentMenuOpen={open}
 							>
-								<MenuItem onClick={handleClose}>Standard Menu Item!</MenuItem>
+								<MenuItem onClick={handleClose}>
+									Standard Menu Item!
+								</MenuItem>
 								<IconMenuItem
 									onClick={handleClose}
 									leftIcon={<NewIcon />}
 									rightIcon={<SaveIcon />}
-									label='Icon Menu Item'
+									label="Icon Menu Item"
 								/>
 								<NestedMenuItem
 									leftIcon={<AdbIcon />}
 									rightIcon={<ArrowRightIcon />}
-									label='Go deeper!'
+									label="Go deeper!"
 									parentMenuOpen={open}
 								>
-									<MenuItem onClick={handleClose}>Standard Menu Item!</MenuItem>
+									<MenuItem onClick={handleClose}>
+										Standard Menu Item!
+									</MenuItem>
 									<IconMenuItem
 										onClick={handleClose}
 										leftIcon={<NewIcon />}
 										rightIcon={<SaveIcon />}
-										label='Icon Menu Item'
+										label="Icon Menu Item"
 									/>
 								</NestedMenuItem>
 							</NestedMenuItem>

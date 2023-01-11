@@ -23,20 +23,25 @@ export const IconMenuItemPage = () => {
 		<>
 			<PageHeader />
 			<P>
-				The <Code>IconMenuItem</Code> is a styled <Code>MenuItem</Code> used for
-				the other components. However it can be used separately as well.
+				The <Code>IconMenuItem</Code> is a styled <Code>MenuItem</Code>{' '}
+				used for the other components. However it can be used separately
+				as well.
 			</P>
 			<SampleBox>
 				<MTP theme={createTheme()}>
 					<div>
 						<Button
-							variant='contained'
+							variant="contained"
 							onClick={handleClick}
 							endIcon={<ArrowDownIcon />}
 						>
 							Click Me!
 						</Button>
-						<Menu anchorEl={anchorEl} open={open} onClose={handleClose}>
+						<Menu
+							anchorEl={anchorEl}
+							open={open}
+							onClose={handleClose}
+						>
 							<IconMenuItem
 								leftIcon={<AdbIcon />}
 								rightIcon={<FlutterDashIcon />}

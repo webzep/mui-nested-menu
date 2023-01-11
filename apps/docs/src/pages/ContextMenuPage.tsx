@@ -51,12 +51,14 @@ const menuItemsData: MenuItemData[] = [
 					{
 						label: 'Option 1',
 						rightIcon: <FlutterDashIcon />,
-						callback: () => console.log('Export > FT1 > O1 clicked'),
+						callback: () =>
+							console.log('Export > FT1 > O1 clicked'),
 					},
 					{
 						label: 'Option 2',
 						leftIcon: <AdbIcon />,
-						callback: () => console.log('Export > FT1 > O2 clicked'),
+						callback: () =>
+							console.log('Export > FT1 > O2 clicked'),
 					},
 				],
 			},
@@ -73,8 +75,10 @@ export const ContextMenuPage = () => {
 		<>
 			<PageHeader />
 			<P>
-				When right clicked, it will open a context menu. Either provide the
-				<Code>menuItems</Code> prop or the <Code>menuItemsData</Code> prop.
+				When right clicked, it will open a context menu. Either provide
+				the
+				<Code>menuItems</Code> prop or the <Code>menuItemsData</Code>{' '}
+				prop.
 			</P>
 
 			<Subheading>menuItems</Subheading>
@@ -86,9 +90,17 @@ export const ContextMenuPage = () => {
 				<MTP theme={createTheme()}>
 					<ContextMenu
 						menuItems={[
-							<IconMenuItem key='i1' label='Item 1' rightIcon={<NewIcon />} />,
-							<Divider key='i2' />,
-							<IconMenuItem key='i3' label='Item 2' rightIcon={<SaveIcon />} />,
+							<IconMenuItem
+								key="i1"
+								label="Item 1"
+								rightIcon={<NewIcon />}
+							/>,
+							<Divider key="i2" />,
+							<IconMenuItem
+								key="i3"
+								label="Item 2"
+								rightIcon={<SaveIcon />}
+							/>,
 						]}
 					>
 						<div>Right Click Me!</div>
@@ -109,8 +121,8 @@ export const ContextMenuPage = () => {
 
 			<Subheading>menuItemsData</Subheading>
 			<P>
-				<Code>menuItemsData</Code> allows you to create a menu from an object
-				format. It is more limited in what it can do.
+				<Code>menuItemsData</Code> allows you to create a menu from an
+				object format. It is more limited in what it can do.
 			</P>
 			<SampleBox>
 				<MTP theme={createTheme()}>
@@ -126,7 +138,8 @@ export const ContextMenuPage = () => {
 			/>
 			<Subheading>Data Structure</Subheading>
 			<P>
-				The <Code>menuItemsData</Code> variable looks like the following:
+				The <Code>menuItemsData</Code> variable looks like the
+				following:
 			</P>
 			<CodeBlock
 				code={`const menuItemsData: MenuItemData[] = [

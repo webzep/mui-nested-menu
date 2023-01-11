@@ -41,7 +41,10 @@ export const getMenuItems = (handleClick: (slug: string) => void) => {
 	const items: ReactNode[] = [];
 	Object.entries(componentsRouteMap).forEach(([pageSlug, info]) => {
 		items.push(
-			<NavigationItem key={pageSlug} onClick={() => handleClick(`${pageSlug}`)}>
+			<NavigationItem
+				key={pageSlug}
+				onClick={() => handleClick(`${pageSlug}`)}
+			>
 				{info.name}
 			</NavigationItem>
 		);
@@ -61,6 +64,9 @@ export const componentsRouteMap = {
 	installation: { name: 'Installation', page: <InstallationPage /> },
 	'context-menu': { name: 'ContextMenu', page: <ContextMenuPage /> },
 	'nested-dropdown': { name: 'NestedDropdown', page: <NestedDropdownPage /> },
-	'nested-menu-item': { name: 'NestedMenuItem', page: <NestedMenuItemPage /> },
+	'nested-menu-item': {
+		name: 'NestedMenuItem',
+		page: <NestedMenuItemPage />,
+	},
 	'icon-menu-item': { name: 'IconMenuItem', page: <IconMenuItemPage /> },
 };

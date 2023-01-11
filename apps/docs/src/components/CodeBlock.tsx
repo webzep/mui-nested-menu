@@ -20,7 +20,8 @@ const Pre = styled.pre<{ restrictHeight: number }>`
 	position: relative;
 	margin-top: 0;
 	border-radius: ${({ theme }) => `${theme.spacing}px !important`};
-	max-height: ${({ restrictHeight }) => (restrictHeight ? '185px' : '1000px')};
+	max-height: ${({ restrictHeight }) =>
+		restrictHeight ? '185px' : '1000px'};
 	transition: max-height 300ms ease-in-out;
 `;
 
@@ -50,7 +51,7 @@ export const CodeBlock = React.memo(
 
 		return (
 			<>
-				<Flex justifyContent='flex-end' height='fit-content'>
+				<Flex justifyContent="flex-end" height="fit-content">
 					{collapsable && (
 						<OutlinedButton onClick={toggleCollapse}>
 							{isCollapsed ? 'Expand' : 'Collapse'}
@@ -59,7 +60,9 @@ export const CodeBlock = React.memo(
 
 					{!noCopy && (
 						<OutlinedButton
-							onClick={() => navigator.clipboard.writeText(code ?? '')}
+							onClick={() =>
+								navigator.clipboard.writeText(code ?? '')
+							}
 							marginTop={4}
 						>
 							Copy
