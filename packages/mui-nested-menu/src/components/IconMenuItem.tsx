@@ -2,7 +2,7 @@ import React, { forwardRef, RefObject } from 'react';
 import MenuItem, { MenuItemProps } from '@mui/material/MenuItem';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/system/Box';
-import styled from '@mui/material/styles/styled';
+import { styled } from '@mui/material/styles';
 import { SxProps } from '@mui/system/styleFunctionSx/styleFunctionSx';
 
 const StyledMenuItem = styled(MenuItem)({
