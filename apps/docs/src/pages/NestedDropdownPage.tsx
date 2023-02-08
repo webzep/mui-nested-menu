@@ -41,7 +41,7 @@ const menuItemsData: MenuItemData = {
 					callback: (
 						event: React.MouseEvent<HTMLElement>,
 						item: MenuItemData
-					) => console.log('Save As > Option 1 clicked'),
+					) => console.log('Save As > Option 1 clicked', event, item),
 				},
 				{
 					label: 'Option 2',
@@ -49,7 +49,7 @@ const menuItemsData: MenuItemData = {
 					callback: (
 						event: React.MouseEvent<HTMLElement>,
 						item: MenuItemData
-					) => console.log('Save As > Option 2 clicked'),
+					) => console.log('Save As > Option 2 clicked', event, item),
 					disabled: true,
 				},
 			],
@@ -68,7 +68,12 @@ const menuItemsData: MenuItemData = {
 							callback: (
 								event: React.MouseEvent<HTMLElement>,
 								item: MenuItemData
-							) => console.log('Export > FT1 > O1 clicked'),
+							) =>
+								console.log(
+									'Export > FT1 > O1 clicked',
+									event,
+									item
+								),
 							sx: { color: '#FF0000' },
 						},
 						{
@@ -77,7 +82,12 @@ const menuItemsData: MenuItemData = {
 							callback: (
 								event: React.MouseEvent<HTMLElement>,
 								item: MenuItemData
-							) => console.log('Export > FT1 > O2 clicked'),
+							) =>
+								console.log(
+									'Export > FT1 > O2 clicked',
+									event,
+									item
+								),
 						},
 					],
 				},
@@ -86,7 +96,7 @@ const menuItemsData: MenuItemData = {
 					callback: (
 						event: React.MouseEvent<HTMLElement>,
 						item: MenuItemData
-					) => console.log('Export > FT2 clicked'),
+					) => console.log('Export > FT2 clicked', event, item),
 				},
 			],
 		},
