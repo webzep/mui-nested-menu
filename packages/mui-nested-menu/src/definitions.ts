@@ -5,7 +5,10 @@ export interface MenuItemData {
 	label?: string;
 	leftIcon?: React.ReactNode;
 	rightIcon?: React.ReactNode;
-	callback?: () => void;
+	callback?: (
+		event: React.MouseEvent<HTMLElement>,
+		item: MenuItemData
+	) => void;
 	items?: MenuItemData[];
 	disabled?: boolean;
 	sx?: SxProps;

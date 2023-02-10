@@ -50,9 +50,9 @@ export function nestedMenuItemsFromObject({
 					leftIcon={leftIcon}
 					rightIcon={rightIcon}
 					label={label}
-					onClick={() => {
+					onClick={(event: React.MouseEvent<HTMLElement>) => {
 						handleClose();
-						callback && callback();
+						callback && callback(event, item);
 					}}
 					sx={sx}
 					disabled={disabled}
