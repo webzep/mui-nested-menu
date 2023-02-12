@@ -1,5 +1,4 @@
 node_modules
-.idea/
 .cache
 .parcel-cache
 .turbo
@@ -7,7 +6,5 @@ build
 coverage
 dist
 .env
-credentials.json
 **/.DS_Store
 yarn-error.log
-firebase-service-account.json
