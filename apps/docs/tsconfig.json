@@ -1,7 +1,28 @@
 {
-	"extends": "tsconfig/react-app.json",
-	"include": ["src"],
-	"compilerOptions": {
-		"baseUrl": "src"
-	}
+    "compilerOptions": {
+        "allowSyntheticDefaultImports": true,
+        "baseUrl": ".",
+        "emitDecoratorMetadata": true,
+        "esModuleInterop": true,
+        "experimentalDecorators": true,
+        "jsx": "react-jsx",
+        "lib": ["dom", "dom.iterable", "esnext"],
+        "module": "ESNext",
+        "moduleResolution": "node",
+        "noImplicitAny": true,
+        "noImplicitReturns": true,
+        "noImplicitThis": true,
+        "outDir": "./build",
+        "paths": {
+            "@/*": ["./src/*"]
+        },
+        "removeComments": true,
+        "resolveJsonModule": true,
+        "sourceMap": true,
+        "suppressImplicitAnyIndexErrors": true,
+        "target": "ESNext",
+        "types": ["node", "vite/client", "vite-plugin-svgr/client"]
+    },
+    "exclude": [".git", "node_modules"],
+    "include": ["src/**/*"]
 }

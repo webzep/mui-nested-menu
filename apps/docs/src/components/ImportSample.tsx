@@ -1,26 +1,25 @@
-import React from 'react';
+import { FC, Fragment } from 'react';
 import { useLocation } from 'react-router-dom';
-import { getPageFromRoute } from 'core/routeMap';
-import { CodeBlock } from 'components/CodeBlock';
-import { Subheading } from 'components/StyledTypography';
+import { Space, Typography } from 'ui';
 
-interface ImportSampleProps {
-	importCode?: string;
-}
+import { CodeBlock } from '@/components/CodeBlock';
+import { getPageFromRoute } from '@/core/routes/routeMap';
 
-export const PageHeader = ({ importCode: code }: ImportSampleProps) => {
-	const location = useLocation();
-	const info = getPageFromRoute(location.pathname);
+type ImportSampleProps = {
+    importCode?: string;
+};
 
-	return (
-		<>
-			<Subheading>Import</Subheading>
+export const PageHeader: FC<ImportSampleProps> = ({ importCode: code }) => {
+    const location = useLocation();
 
-			<CodeBlock
-				code={code ?? `import {${info?.name}} from 'mui-nested-menu';`}
-			/>
+    const info = getPageFromRoute(location.pathname);
 
-			<Subheading>Overview</Subheading>
-		</>
-	);
+    return (
+        <Fragment>
+            <Typography variant="h2">Import</Typography>
+            <CodeBlock code={code ?? `import { ${info?.name} } from 'mui-nested-menu';`} />
+            <Space size="48px" vertical />
+            <Typography variant="h2">Overview</Typography>
+        </Fragment>
+    );
 };

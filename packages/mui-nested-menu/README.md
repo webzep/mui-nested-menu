@@ -1,13 +1,9 @@
 # Releasing
 
+Update the README.md file in the root then run the below from the root.
+
 ```sh
-npm run prepare
-
-npm version [major|minor|patch]
-
-npm run dist
-
-cd ./dist
-
-npm publish
+yarn menu publish:minor
+# or
+yarn menu publish:patch
 ```
