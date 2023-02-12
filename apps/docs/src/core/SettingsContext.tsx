@@ -1,5 +1,5 @@
 import { ThemeMode } from 'common';
-import { Dispatch, SetStateAction, useState, createContext, ReactNode } from 'react';
+import { createContext, Dispatch, ReactNode, SetStateAction, useState } from 'react';
 
 type SettingsProps = {
     mode: ThemeMode;

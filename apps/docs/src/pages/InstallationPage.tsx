@@ -1,13 +1,14 @@
-import { Code, P, Subheading } from '@/components/StyledTypography';
-import { CodeBlock } from '@/components/CodeBlock';
 import { FC, Fragment } from 'react';
 import { Typography } from 'ui';
+
+import { CodeBlock } from '@/components/CodeBlock';
+import { Code, P, Subheading } from '@/components/StyledTypography';
 
 export const InstallationPage: FC = () => {
     return (
         <Fragment>
             <Typography variant="h1">🪆 Mui Nested Menu</Typography>
-            <Typography variant="h2">It's not perfect, but it's pretty good.</Typography>
+            <Typography variant="h2">It&apos;s not perfect, but it&apos;s pretty good.</Typography>
             <P>
                 This package provides components to let you nest menu items infinitely deep. The code is an
                 adaption from <a href="material-ui-nested-menu-item">this package</a> to work with{' '}
@@ -17,7 +18,7 @@ export const InstallationPage: FC = () => {
             <P>
                 The code is <a href="https://github.com/steviebaa/mui-nested-menu">open source</a>, so you can
                 use the library by copying the <Code>src/mui-nested-menu</Code> directory to your project (if
-                you'd like to adapt the components) or by installing it via{' '}
+                you&apos;d like to adapt the components) or by installing it via{' '}
                 <a href="https://www.npmjs.com/package/mui-nested-menu">NPM</a>.
             </P>
             <CodeBlock code="npm install mui-nested-menu" />

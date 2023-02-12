@@ -1,30 +1,28 @@
-import React from 'react';
-import { P, Code } from '@/components/StyledTypography';
-import { SampleBox } from '@/components/SampleBox';
-import { CodeBlock } from '@/components/CodeBlock';
-import { PageHeader } from '@/components/ImportSample';
-
-import { IconMenuItem, NestedMenuItem } from 'mui-nested-menu';
-
-import { Button, Menu, MenuItem } from '@mui/material';
-import { ThemeProvider as MTP, createTheme } from '@mui/material/styles';
-
-import NewIcon from '@mui/icons-material/InsertDriveFileOutlined';
-import SaveIcon from '@mui/icons-material/SaveRounded';
-import ArrowRightIcon from '@mui/icons-material/KeyboardArrowRightRounded';
-import ArrowDownIcon from '@mui/icons-material/KeyboardArrowDownRounded';
 import AdbIcon from '@mui/icons-material/Adb';
 import FlutterDashIcon from '@mui/icons-material/FlutterDash';
+import NewIcon from '@mui/icons-material/InsertDriveFileOutlined';
+import ArrowDownIcon from '@mui/icons-material/KeyboardArrowDownRounded';
+import ArrowRightIcon from '@mui/icons-material/KeyboardArrowRightRounded';
+import SaveIcon from '@mui/icons-material/SaveRounded';
+import { Button, Menu, MenuItem } from '@mui/material';
+import { createTheme, ThemeProvider as MTP } from '@mui/material/styles';
+import { IconMenuItem, NestedMenuItem } from 'mui-nested-menu';
+import { Fragment, MouseEvent, useState } from 'react';
+
+import { CodeBlock } from '@/components/CodeBlock';
+import { PageHeader } from '@/components/ImportSample';
+import { SampleBox } from '@/components/SampleBox';
+import { Code, P } from '@/components/StyledTypography';
 
 export const NestedMenuItemPage = () => {
-    const [anchorEl, setAnchorEl] = React.useState<Element | null>(null);
+    const [anchorEl, setAnchorEl] = useState<Element | null>(null);
     const open = Boolean(anchorEl);
 
-    const handleClick = (e: React.MouseEvent) => setAnchorEl(e.currentTarget);
+    const handleClick = (e: MouseEvent) => setAnchorEl(e.currentTarget);
     const handleClose = () => setAnchorEl(null);
 
     return (
-        <>
+        <Fragment>
             <PageHeader />
 
             <P>
@@ -72,10 +70,10 @@ export const NestedMenuItemPage = () => {
                 </MTP>
             </SampleBox>
             <CodeBlock
-                code={`const [anchorEl, setAnchorEl] = React.useState(null);
+                code={`const [anchorEl, setAnchorEl] = useState(null);
 const open = Boolean(anchorEl);
 
-const handleClick = (e: React.MouseEvent) => setAnchorEl(e.currentTarget);
+const handleClick = (e: MouseEvent) => setAnchorEl(e.currentTarget);
 const handleClose = () => setAnchorEl(null);
 
 return (
@@ -120,6 +118,6 @@ return (
   </div>
 );`}
             />
-        </>
+        </Fragment>
     );
 };

@@ -22,7 +22,7 @@ export const Direction = {
     TOP: 'top',
 } as const;
 
-export type DirectionType = typeof Direction[keyof typeof Direction];
+export type DirectionType = (typeof Direction)[keyof typeof Direction];
 
 type WrapperProps = {
     bounds: DOMRect;

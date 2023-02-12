@@ -1,166 +1,180 @@
-import React, { useState, useRef, useImperativeHandle } from 'react';
-import { IconMenuItem } from './IconMenuItem';
 import Menu, { MenuProps } from '@mui/material/Menu';
 import { MenuItemProps } from '@mui/material/MenuItem';
+import {
+    ElementType,
+    FocusEvent,
+    forwardRef,
+    HTMLAttributes,
+    KeyboardEvent,
+    MouseEvent,
+    ReactNode,
+    RefAttributes,
+    useImperativeHandle,
+    useRef,
+    useState,
+} from 'react';
+
 import { ChevronRight } from '../icons/ChevronRight';
+import { IconMenuItem } from './IconMenuItem';
 
-export interface NestedMenuItemProps extends Omit<MenuItemProps, 'button'> {
-	parentMenuOpen: boolean;
-	component?: React.ElementType;
-	label?: string;
-	rightIcon?: React.ReactNode;
-	leftIcon?: React.ReactNode;
-	children?: React.ReactNode;
-	className?: string;
-	tabIndex?: number;
-	disabled?: boolean;
-	ContainerProps?: React.HTMLAttributes<HTMLElement> &
-		React.RefAttributes<HTMLElement | null>;
-	MenuProps?: Partial<Omit<MenuProps, 'children'>>;
-	button?: true | undefined;
-}
+export type NestedMenuItemProps = Omit<MenuItemProps, 'button'> & {
+    parentMenuOpen: boolean;
+    component?: ElementType;
+    label?: string;
+    rightIcon?: ReactNode;
+    leftIcon?: ReactNode;
+    children?: ReactNode;
+    className?: string;
+    tabIndex?: number;
+    disabled?: boolean;
+    ContainerProps?: HTMLAttributes<HTMLElement> & RefAttributes<HTMLElement | null>;
+    MenuProps?: Partial<Omit<MenuProps, 'children'>>;
+    button?: true | undefined;
+};
 
-const NestedMenuItem = React.forwardRef<
-	HTMLLIElement | null,
-	NestedMenuItemProps
->(function NestedMenuItem(props, ref) {
-	const {
-		parentMenuOpen,
-		label,
-		rightIcon = <ChevronRight />,
-		leftIcon = null,
-		children,
-		className,
-		tabIndex: tabIndexProp,
-		ContainerProps: ContainerPropsProp = {},
-		MenuProps,
-		...MenuItemProps
-	} = props;
+const NestedMenuItem = forwardRef<HTMLLIElement | null, NestedMenuItemProps>(function NestedMenuItem(
+    props,
+    ref
+) {
+    const {
+        parentMenuOpen,
+        label,
+        rightIcon = <ChevronRight />,
+        leftIcon = null,
+        children,
+        className,
+        tabIndex: tabIndexProp,
+        ContainerProps: ContainerPropsProp = {},
+        MenuProps,
+        ...MenuItemProps
+    } = props;
 
-	const { ref: containerRefProp, ...ContainerProps } = ContainerPropsProp;
+    const { ref: containerRefProp, ...ContainerProps } = ContainerPropsProp;
 
-	const menuItemRef = useRef<HTMLLIElement | null>(null);
-	useImperativeHandle(ref, () => menuItemRef.current!);
+    const menuItemRef = useRef<HTMLLIElement | null>(null);
+    useImperativeHandle(ref, () => menuItemRef.current!); // eslint-disable-line @typescript-eslint/no-non-null-assertion
 
-	const containerRef = useRef<HTMLDivElement | null>(null);
-	useImperativeHandle(containerRefProp, () => containerRef.current);
+    const containerRef = useRef<HTMLDivElement | null>(null);
+    useImperativeHandle(containerRefProp, () => containerRef.current);
 
-	const menuContainerRef = useRef<HTMLDivElement | null>(null);
+    const menuContainerRef = useRef<HTMLDivElement | null>(null);
 
-	const [isSubMenuOpen, setIsSubMenuOpen] = useState(false);
+    const [isSubMenuOpen, setIsSubMenuOpen] = useState(false);
 
-	const handleMouseEnter = (e: React.MouseEvent<HTMLElement>) => {
-		setIsSubMenuOpen(true);
+    const handleMouseEnter = (e: MouseEvent<HTMLElement>) => {
+        setIsSubMenuOpen(true);
 
-		if (ContainerProps.onMouseEnter) {
-			ContainerProps.onMouseEnter(e);
-		}
-	};
-	const handleMouseLeave = (e: React.MouseEvent<HTMLElement>) => {
-		setIsSubMenuOpen(false);
+        if (ContainerProps.onMouseEnter) {
+            ContainerProps.onMouseEnter(e);
+        }
+    };
+    const handleMouseLeave = (e: MouseEvent<HTMLElement>) => {
+        setIsSubMenuOpen(false);
 
-		if (ContainerProps.onMouseLeave) {
-			ContainerProps.onMouseLeave(e);
-		}
-	};
+        if (ContainerProps.onMouseLeave) {
+            ContainerProps.onMouseLeave(e);
+        }
+    };
 
-	// Check if any immediate children are active
-	const isSubmenuFocused = () => {
-		const active =
-			containerRef.current?.ownerDocument.activeElement ?? null;
-		for (const child of menuContainerRef.current!.children) {
-			if (child === active) {
-				return true;
-			}
-		}
-		return false;
-	};
+    // Check if any immediate children are active
+    const isSubmenuFocused = () => {
+        const active = containerRef.current?.ownerDocument.activeElement ?? null;
+        // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+        for (const child of menuContainerRef.current!.children) {
+            if (child === active) {
+                return true;
+            }
+        }
 
-	const handleFocus = (e: React.FocusEvent<HTMLElement>) => {
-		if (e.target === containerRef.current) {
-			setIsSubMenuOpen(true);
-		}
+        return false;
+    };
 
-		if (ContainerProps.onFocus) {
-			ContainerProps.onFocus(e);
-		}
-	};
+    const handleFocus = (e: FocusEvent<HTMLElement>) => {
+        if (e.target === containerRef.current) {
+            setIsSubMenuOpen(true);
+        }
 
-	const handleKeyDown = (e: React.KeyboardEvent) => {
-		if (e.key === 'Escape') {
-			return;
-		}
+        if (ContainerProps.onFocus) {
+            ContainerProps.onFocus(e);
+        }
+    };
 
-		if (isSubmenuFocused()) {
-			e.stopPropagation();
-		}
+    const handleKeyDown = (e: KeyboardEvent) => {
+        if (e.key === 'Escape') {
+            return;
+        }
 
-		const active = containerRef.current?.ownerDocument.activeElement;
+        if (isSubmenuFocused()) {
+            e.stopPropagation();
+        }
 
-		if (e.key === 'ArrowLeft' && isSubmenuFocused()) {
-			containerRef.current?.focus();
-		}
+        const active = containerRef.current?.ownerDocument.activeElement;
 
-		if (
-			e.key === 'ArrowRight' &&
-			e.target === containerRef.current &&
-			e.target === active
-		) {
-			const firstChild = menuContainerRef.current
-				?.children[0] as HTMLDivElement;
-			firstChild?.focus();
-		}
-	};
+        if (e.key === 'ArrowLeft' && isSubmenuFocused()) {
+            containerRef.current?.focus();
+        }
 
-	const open = isSubMenuOpen && parentMenuOpen;
+        if (e.key === 'ArrowRight' && e.target === containerRef.current && e.target === active) {
+            const firstChild = menuContainerRef.current?.children[0] as HTMLDivElement;
+            firstChild?.focus();
+        }
+    };
 
-	// Root element must have a `tabIndex` attribute for keyboard navigation
-	let tabIndex;
-	if (!props.disabled) {
-		tabIndex = tabIndexProp !== undefined ? tabIndexProp : -1;
-	}
+    const open = isSubMenuOpen && parentMenuOpen;
 
-	return (
-		<div
-			{...ContainerProps}
-			ref={containerRef}
-			onFocus={handleFocus}
-			tabIndex={tabIndex}
-			onMouseEnter={handleMouseEnter}
-			onMouseLeave={handleMouseLeave}
-			onKeyDown={handleKeyDown}
-		>
-			<IconMenuItem
-				MenuItemProps={MenuItemProps}
-				className={className}
-				ref={menuItemRef}
-				leftIcon={leftIcon}
-				rightIcon={rightIcon}
-				label={label}
-			/>
+    // Root element must have a `tabIndex` attribute for keyboard navigation
+    let tabIndex;
+    if (!props.disabled) {
+        tabIndex = tabIndexProp !== undefined ? tabIndexProp : -1;
+    }
 
-			<Menu
-				// Set pointer events to 'none' to prevent the invisible Popover div
-				// from capturing events for clicks and hovers
-				style={{ pointerEvents: 'none' }}
-				anchorEl={menuItemRef.current}
-				anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
-				transformOrigin={{ vertical: 'top', horizontal: 'left' }}
-				open={open}
-				autoFocus={false}
-				disableAutoFocus
-				disableEnforceFocus
-				onClose={() => {
-					setIsSubMenuOpen(false);
-				}}
-				{...MenuProps}
-			>
-				<div ref={menuContainerRef} style={{ pointerEvents: 'auto' }}>
-					{children}
-				</div>
-			</Menu>
-		</div>
-	);
+    return (
+        <div
+            {...ContainerProps}
+            ref={containerRef}
+            onFocus={handleFocus}
+            tabIndex={tabIndex}
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+            onKeyDown={handleKeyDown}
+        >
+            <IconMenuItem
+                MenuItemProps={MenuItemProps}
+                className={className}
+                ref={menuItemRef}
+                leftIcon={leftIcon}
+                rightIcon={rightIcon}
+                label={label}
+            />
+
+            <Menu
+                // Set pointer events to 'none' to prevent the invisible Popover div
+                // from capturing events for clicks and hovers
+                style={{ pointerEvents: 'none' }}
+                anchorEl={menuItemRef.current}
+                anchorOrigin={{
+                    horizontal: 'right',
+                    vertical: 'top',
+                }}
+                transformOrigin={{
+                    horizontal: 'left',
+                    vertical: 'top',
+                }}
+                open={open}
+                autoFocus={false}
+                disableAutoFocus
+                disableEnforceFocus
+                onClose={() => {
+                    setIsSubMenuOpen(false);
+                }}
+                {...MenuProps}
+            >
+                <div ref={menuContainerRef} style={{ pointerEvents: 'auto' }}>
+                    {children}
+                </div>
+            </Menu>
+        </div>
+    );
 });
 
 NestedMenuItem.displayName = 'NestedMenuItem';

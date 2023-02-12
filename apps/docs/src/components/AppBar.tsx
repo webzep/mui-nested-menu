@@ -1,12 +1,10 @@
 import styled from '@emotion/styled';
+import { ThemeMode } from 'common';
 import { FC, useContext, useRef, useState } from 'react';
 import { useNavigate } from 'react-router';
 import { Button, Menu, MenuItem, Tooltip, Typography } from 'ui';
 
-import Brightness6RoundedIcon from '@mui/icons-material/Brightness6Rounded';
-import { ThemeMode } from 'common';
 import { APP_BAR_HEIGHT } from '@/core/constants';
-import { LightMode } from '@mui/icons-material';
 import { settingsContext } from '@/core/SettingsContext';
 
 const titleCase = (str: string) => str.charAt(0).toUpperCase() + str.slice(1);
@@ -60,14 +58,14 @@ export const AppBar: FC = () => {
                 <Menu
                     anchorElement={anchorElRef}
                     anchorOrigin={{
-                        vertical: 'bottom',
                         horizontal: 'right',
+                        vertical: 'bottom',
                     }}
                     onClose={toggleMenu}
                     open={open}
                     transformOrigin={{
-                        vertical: 'top',
                         horizontal: 'right',
+                        vertical: 'top',
                     }}
                 >
                     <MenuItem label="Light" onClick={handleThemeChanged(ThemeMode.LIGHT)} />

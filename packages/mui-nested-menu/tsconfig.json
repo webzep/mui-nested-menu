@@ -15,7 +15,7 @@
         "sourceMap": false,
         "strict": true,
         "target": "es5",
-        "types": ["node"],
+        "types": ["node"]
     },
     "exclude": [".git", "node_modules"],
     "include": ["src/**/*"]

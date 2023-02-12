@@ -1,8 +1,9 @@
-import { FC } from 'react';
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
+import { FC } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { Button, Column, Space } from 'ui';
-import { useNavigate, useLocation } from 'react-router-dom';
+
 import { PathNames } from '@/core/configs/paths';
 
 const PanelContainer = styled(Column)`
@@ -16,7 +17,7 @@ const PanelContainer = styled(Column)`
 
 type NavigateButtonProps = {
     label: string;
-    path: typeof PathNames[keyof typeof PathNames];
+    path: (typeof PathNames)[keyof typeof PathNames];
 };
 
 const MenuNavigateButton: FC<NavigateButtonProps> = ({ label, path }) => {
@@ -42,8 +43,8 @@ const MenuNavigateButton: FC<NavigateButtonProps> = ({ label, path }) => {
 
 export const NavigationPanel: FC = () => {
     return (
-		<PanelContainer gap="16px">
-			<Space size="12px" vertical/>
+        <PanelContainer gap="16px">
+            <Space size="12px" vertical />
             <MenuNavigateButton label="Installation" path={PathNames.INSTALLATION} />
             <MenuNavigateButton label="<ContextMenu/>" path={PathNames.CONTEXT_MENU} />
             <MenuNavigateButton label="<NestedDropdown/>" path={PathNames.NESTED_DROPDOWN} />

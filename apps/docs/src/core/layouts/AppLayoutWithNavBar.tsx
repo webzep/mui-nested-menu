@@ -2,8 +2,9 @@ import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 import { FC, ReactNode } from 'react';
 import { Outlet } from 'react-router';
-import { APP_BAR_HEIGHT, MENU_PANEL_WIDTH } from '@/core/constants';
 import { Padding, Row, Scrollable } from 'ui';
+
+import { APP_BAR_HEIGHT, MENU_PANEL_WIDTH } from '@/core/constants';
 
 const AppLayoutContainer = styled.div`
     display: flex;

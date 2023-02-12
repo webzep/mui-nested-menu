@@ -14,9 +14,9 @@ export const NormalizeStyles: FC = () => {
                     padding: 0;
                 }
 
-				a {
-					color: ${theme.palette.brandAccent};
-				}
+                a {
+                    color: ${theme.palette.brandAccent};
+                }
             `}
         />
     );

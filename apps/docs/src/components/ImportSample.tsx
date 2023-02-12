@@ -1,8 +1,9 @@
 import { Fragment } from 'react';
 import { useLocation } from 'react-router-dom';
-import { getPageFromRoute } from '@/core/routes/routeMap';
-import { CodeBlock } from '@/components/CodeBlock';
 import { Space, Typography } from 'ui';
+
+import { CodeBlock } from '@/components/CodeBlock';
+import { getPageFromRoute } from '@/core/routes/routeMap';
 
 interface ImportSampleProps {
     importCode?: string;

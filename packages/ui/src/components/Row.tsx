@@ -6,7 +6,7 @@ import { ReactHTMLProps } from '../core/types/interfaces';
 
 type RowCssProps = {
     align?: 'baseline' | 'center' | 'flex-end' | 'flex-start' | 'stretch';
-	gap?: string;
+    gap?: string;
     justify?:
         | 'center'
         | 'flex-end'
