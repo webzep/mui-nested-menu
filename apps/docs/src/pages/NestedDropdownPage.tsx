@@ -1,8 +1,8 @@
 import React from 'react';
-import { Code, P, Subheading } from 'components/StyledTypography';
-import { SampleBox } from 'components/SampleBox';
-import { CodeBlock } from 'components/CodeBlock';
-import { PageHeader } from 'components/ImportSample';
+import { Code, P, Subheading } from '@/components/StyledTypography';
+import { SampleBox } from '@/components/SampleBox';
+import { CodeBlock } from '@/components/CodeBlock';
+import { PageHeader } from '@/components/ImportSample';
 
 import { ThemeProvider as MTP, createTheme } from '@mui/material/styles';
 import NewIcon from '@mui/icons-material/InsertDriveFileOutlined';

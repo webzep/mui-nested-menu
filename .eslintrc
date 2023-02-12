@@ -1,0 +1,42 @@
+{
+	"env": {
+		"node": true,
+		"browser": true,
+		"es6": true
+	},
+	"extends": [
+		"eslint:recommended",
+		"plugin:@typescript-eslint/recommended",
+		"plugin:import/errors",
+		"plugin:import/warnings",
+		"plugin:import/typescript",
+		"plugin:react/recommended"
+	],
+	"globals": {
+		"React": true,
+		"JSX": true,
+		"NodeJS": true
+	},
+	"parser": "@typescript-eslint/parser",
+	"plugins": ["import", "simple-import-sort", "unused-imports"],
+	"rules": {
+		"@typescript-eslint/no-namespace": "off",
+		"import/default": "off",
+		"newline-before-return": "error",
+		"react/prop-types": "off",
+		"simple-import-sort/exports": "error",
+		"simple-import-sort/imports": "error",
+		"sort-keys": "error",
+		"unused-imports/no-unused-imports-ts": "error"
+	},
+	"settings": {
+		"react": {
+			"version": "detect"
+		},
+		"import/resolver": {
+			"typescript": {
+				"project": "**/*/tsconfig.json"
+			}
+		}
+	}
+}

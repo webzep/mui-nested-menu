@@ -1,26 +1,29 @@
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { FC, useContext } from 'react';
+import { createRoot } from 'react-dom/client';
+import { BrowserRouter as Router } from 'react-router-dom';
+import { createTheme, SnackbarProvider, ThemeProvider } from 'ui';
 
-import { SettingsProvider } from 'stores/SettingsContext';
-import { ThemeProvider } from 'core/Theme';
-import { createSectionRoutes } from 'core/routeMap';
-import { Home } from 'pages/HomeLayout';
-import { SnackbarProvider } from 'themestress/components';
+import { SiteRouter } from '@/core/routes/SiteRouter';
+import { settingsContext, SettingsProvider } from '@/core/SettingsContext';
 
-export const App: React.FC = () => {
-	return (
-		<SettingsProvider>
-			<ThemeProvider>
-				<SnackbarProvider>
-					<Router>
-						<Routes>
-							<Route path={'*'} element={<Home />}>
-								{createSectionRoutes()}
-							</Route>
-						</Routes>
-					</Router>
-				</SnackbarProvider>
-			</ThemeProvider>
-		</SettingsProvider>
-	);
+const App: FC = () => {
+    const [settings] = useContext(settingsContext);
+
+    return (
+        <ThemeProvider theme={createTheme({ mode: settings.mode })}>
+            <SnackbarProvider>
+                <SiteRouter />
+            </SnackbarProvider>
+        </ThemeProvider>
+    );
 };
+
+const container = document.getElementById('app');
+const root = createRoot(container);
+root.render(
+    <Router>
+        <SettingsProvider>
+            <App />
+        </SettingsProvider>
+    </Router>
+);

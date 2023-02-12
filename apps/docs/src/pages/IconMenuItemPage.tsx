@@ -1,8 +1,8 @@
 import React from 'react';
-import { Code, P } from 'components/StyledTypography';
-import { SampleBox } from 'components/SampleBox';
-import { CodeBlock } from 'components/CodeBlock';
-import { PageHeader } from 'components/ImportSample';
+import { Code, P } from '@/components/StyledTypography';
+import { SampleBox } from '@/components/SampleBox';
+import { CodeBlock } from '@/components/CodeBlock';
+import { PageHeader } from '@/components/ImportSample';
 
 import { Button, Menu } from '@mui/material';
 import { ThemeProvider as MTP, createTheme } from '@mui/material/styles';

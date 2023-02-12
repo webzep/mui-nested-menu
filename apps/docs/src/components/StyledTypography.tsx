@@ -1,35 +1,61 @@
-import React from 'react';
+import { css } from '@emotion/react';
 import styled from '@emotion/styled';
-import { Typography, TypographyProps } from 'themestress/components';
+import { FC, ReactNode } from 'react';
+import { Typography } from 'ui';
 
-export const P = styled((props: TypographyProps) => (
-	<Typography
-		variant="body-medium"
-		{...props}
-		marginBottom={3}
-		fontSize="16px"
-	/>
-))`
-	margin-bottom: ${({ theme }) => `${theme.spacing.size * 6}px`};
+const StyledParagraph = styled(Typography)`
+    margin-bottom: ${({ theme }) => `calc(${theme.sizes.padding} * 4)`};
 `;
 
-export const Code = styled((props: TypographyProps) => (
-	<Typography
-		variant="label-small"
-		element="span"
-		fontSize="1rem"
-		fontColor="var(--sys-color-on-secondary-container)"
-		bgColor="var(--sys-color-secondary-container)"
-		{...props}
-	/>
-))`
-	font-family: monospace;
-	border-radius: 4px;
-	padding: 0.5px 2px;
-	min-height: 1.2rem;
-	line-height: unset;
+type PProps = {
+    children?: ReactNode;
+};
+
+export const P: FC<PProps> = ({ children, ...props }) => {
+    return (
+        <StyledParagraph variant="body" {...props}>
+            {children}
+        </StyledParagraph>
+    );
+};
+
+const StyledCode = styled(Typography)`
+    ${({ theme }) => css`
+        background-color: #002740;
+        border-radius: ${theme.sizes.borderRadiusSmall};
+        color: white;
+        display: inline-block;
+        font-family: monospace;
+        line-height: unset;
+        min-height: 1.2rem;
+        padding: 0.5px 2px;
+    `};
 `;
 
-export const Subheading = styled.h2`
-	margin-top: 48px;
+type CodeProps = {
+    children?: ReactNode;
+};
+
+export const Code: FC<CodeProps> = ({ children, ...props }) => {
+    return (
+        <StyledCode variant="body" {...props}>
+            {children}
+        </StyledCode>
+    );
+};
+
+const StyledSubheading = styled(Typography)`
+    margin-top: 24px;
 `;
+
+type SubheadingProps = {
+    children?: ReactNode;
+};
+
+export const Subheading: FC<SubheadingProps> = ({ children, ...props }) => {
+    return (
+        <StyledSubheading variant="h3" {...props}>
+            {children}
+        </StyledSubheading>
+    );
+};
