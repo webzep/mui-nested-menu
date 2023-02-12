@@ -1,52 +1,52 @@
 {
-  "name": "mui-nested-menu",
-  "version": "3.3.0",
-  "description": "Infinitely deep nested menu items for MUI 5.",
-  "keywords": [
-    "design",
-    "material",
-    "mui",
-    "react",
-    "ui"
-  ],
-  "homepage": "https://mui-nested-menu.vercel.app/",
-  "bugs": {
-    "url": "https://github.com/steviebaa/mui-nested-menu/issues"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/steviebaa/mui-nested-menu.git"
-  },
-  "license": "MIT",
-  "author": "Steve Richardson",
-  "main": "dist/index.js",
-  "module": "src/index.ts",
-  "source": "./src/index.ts",
-  "types": "src/index.ts",
-  "scripts": {
-    "package:build": "npx -yes json -I -f package.json -e 'this.module=\"dist/module.js\"' && npx -yes json -I -f package.json -e 'this.types=\"dist/index.d.ts\"'",
-    "package:dev": "npx -yes json -I -f package.json -e 'this.module=\"src/index.ts\"' && npx -yes json -I -f package.json -e 'this.types=\"src/index.ts\"'",
-    "build": "npm run package:build && parcel build --no-optimize --no-source-maps --no-content-hash --target && npm run package:dev",
-    "clean": "rm -rf dist",
-    "copy": "cp ../../README.md ./dist/README.md && cp ../../LICENSE ./dist/LICENSE && cp ./package.template.json ./dist/package.json",
-    "dist": "npm run clean && npm run build && npm run copy",
-    "prepare": "npm run version:currentpackage",
-    "publish:minor": "npm run prepare && npm version minor && npm run dist && npm publish && cd ./dist && cd ../../..",
-    "publish:patch": "npm run prepare && npm version patch && npm run dist && npm publish && cd ./dist && cd ../../..",
-    "postversion": "npm run version:currenttemplate",
-    "version:currentpackage": "npm pkg set 'version'=$(npm view mui-nested-menu version)",
-    "version:currenttemplate": "npx -yes json -I -f package.template.json -e 'this.version=\"$(jq -r '.version' package.json)\"'"
-  },
-  "dependencies": {
-    "@emotion/react": "11.10.5",
-    "@emotion/styled": "11.10.5",
-    "@mui/material": "5.0.0",
-    "@mui/system": "5.10.12",
-    "react": "18.2.0",
-    "react-dom": "18.2.0"
-  },
-  "devDependencies": {
-    "parcel": "2.8.3",
-    "typescript": "4.9.4"
-  }
+    "name": "mui-nested-menu",
+    "version": "3.3.0",
+    "description": "Infinitely deep nested menu items for MUI 5.",
+    "keywords": [
+        "design",
+        "material",
+        "mui",
+        "react",
+        "ui"
+    ],
+    "homepage": "https://mui-nested-menu.vercel.app/",
+    "bugs": {
+        "url": "https://github.com/steviebaa/mui-nested-menu/issues"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/steviebaa/mui-nested-menu.git"
+    },
+    "license": "MIT",
+    "author": "Steve Richardson",
+    "main": "dist/index.js",
+    "module": "src/index.ts",
+    "source": "./src/index.ts",
+    "types": "src/index.ts",
+    "scripts": {
+        "build:package": "npm run package:build && parcel build --no-optimize --no-source-maps --no-content-hash --target && npm run package:dev",
+        "clean": "rm -rf dist",
+        "copy": "cp ../../README.md ./dist/README.md && cp ../../LICENSE ./dist/LICENSE && cp ./package.template.json ./dist/package.json",
+        "dist": "npm run clean && npm run build:package && npm run copy",
+        "prepare": "npm run version:currentpackage",
+        "publish:minor": "npm run prepare && npm version minor && npm run dist && npm publish && cd ./dist && cd ../../..",
+        "publish:patch": "npm run prepare && npm version patch && npm run dist && npm publish && cd ./dist && cd ../../..",
+        "set-package:build": "npx -yes json -I -f package.json -e 'this.module=\"dist/module.js\"' && npx -yes json -I -f package.json -e 'this.types=\"dist/index.d.ts\"'",
+        "set-package:dev": "npx -yes json -I -f package.json -e 'this.module=\"src/index.ts\"' && npx -yes json -I -f package.json -e 'this.types=\"src/index.ts\"'",
+        "postversion": "npm run version:currenttemplate",
+        "version:currentpackage": "npm pkg set 'version'=$(npm view mui-nested-menu version)",
+        "version:currenttemplate": "npx -yes json -I -f package.template.json -e 'this.version=\"$(jq -r '.version' package.json)\"'"
+    },
+    "dependencies": {
+        "@emotion/react": "11.10.5",
+        "@emotion/styled": "11.10.5",
+        "@mui/material": "5.0.0",
+        "@mui/system": "5.10.12",
+        "react": "18.2.0",
+        "react-dom": "18.2.0"
+    },
+    "devDependencies": {
+        "parcel": "2.8.3",
+        "typescript": "4.9.4"
+    }
 }
