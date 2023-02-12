@@ -55,9 +55,9 @@ export const InstallationPage: FC = () => {
                 more than welcome. Please make sure to stick to the coding style used throughout the project.
             </P>
             <P>
-                The nest menu code can be found in <Code>src/mui-nested-menu</Code>. This way, as you build,
-                you can see the changes by launching the documentation. Once a PR is merged, I will update
-                NPM.
+                The nested menu code can be found in <Code>packages/mui-nested-menu</Code>. This way,
+                development changes will be live in the documentation, so all you need to do it run `yarn &&
+                yarn start`. Once a PR is merged, I will update NPM registry.
             </P>
             <P>
                 <ol>
