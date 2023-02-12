@@ -11,15 +11,13 @@ type ParagraphProps = {
     children?: ReactNode;
 };
 
-export const P: FC<ParagraphProps> = ({ children, ...props }) => {
-    return (
-        <StyledParagraph variant="body" {...props}>
-            {children}
-        </StyledParagraph>
-    );
-};
+export const P: FC<ParagraphProps> = ({ children, ...props }) => (
+    <StyledParagraph variant="body" {...props}>
+        {children}
+    </StyledParagraph>
+);
 
-const StyledCode = styled(Typography)`
+const StyledCode = styled.span`
     ${({ theme }) => css`
         background-color: #002740;
         border-radius: ${theme.sizes.borderRadiusSmall};
@@ -36,13 +34,7 @@ type CodeProps = {
     children?: ReactNode;
 };
 
-export const Code: FC<CodeProps> = ({ children, ...props }) => {
-    return (
-        <StyledCode variant="body" {...props}>
-            {children}
-        </StyledCode>
-    );
-};
+export const Code: FC<CodeProps> = ({ children, ...props }) => <StyledCode {...props}>{children}</StyledCode>;
 
 const StyledSubheading = styled(Typography)`
     margin-top: 24px;
@@ -52,10 +44,8 @@ type SubheadingProps = {
     children?: ReactNode;
 };
 
-export const Subheading: FC<SubheadingProps> = ({ children, ...props }) => {
-    return (
-        <StyledSubheading variant="h3" {...props}>
-            {children}
-        </StyledSubheading>
-    );
-};
+export const Subheading: FC<SubheadingProps> = ({ children, ...props }) => (
+    <StyledSubheading variant="h3" {...props}>
+        {children}
+    </StyledSubheading>
+);
