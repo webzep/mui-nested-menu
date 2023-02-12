@@ -5,7 +5,7 @@ type SettingsProps = {
     mode: ThemeMode;
 };
 
-export type SettingsContextProps = [state: SettingsProps, setState: Dispatch<SetStateAction<SettingsProps>>];
+type SettingsContextProps = [state: SettingsProps, setState: Dispatch<SetStateAction<SettingsProps>>];
 
 export const settingsContext = createContext<SettingsContextProps | null>(null);
 

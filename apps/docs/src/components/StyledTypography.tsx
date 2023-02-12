@@ -7,11 +7,11 @@ const StyledParagraph = styled(Typography)`
     margin-bottom: ${({ theme }) => `calc(${theme.sizes.padding} * 4)`};
 `;
 
-type PProps = {
+type ParagraphProps = {
     children?: ReactNode;
 };
 
-export const P: FC<PProps> = ({ children, ...props }) => {
+export const P: FC<ParagraphProps> = ({ children, ...props }) => {
     return (
         <StyledParagraph variant="body" {...props}>
             {children}

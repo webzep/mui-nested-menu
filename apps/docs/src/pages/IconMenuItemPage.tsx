@@ -4,22 +4,24 @@ import ArrowDownIcon from '@mui/icons-material/KeyboardArrowDownRounded';
 import { Button, Menu } from '@mui/material';
 import { createTheme, ThemeProvider as MTP } from '@mui/material/styles';
 import { IconMenuItem } from 'mui-nested-menu';
-import { MouseEvent, useState } from 'react';
+import { FC, Fragment, MouseEvent, useState } from 'react';
 
 import { CodeBlock } from '@/components/CodeBlock';
 import { PageHeader } from '@/components/ImportSample';
 import { SampleBox } from '@/components/SampleBox';
 import { Code, P } from '@/components/StyledTypography';
 
-export const IconMenuItemPage = () => {
+export const IconMenuItemPage: FC = () => {
     const [anchorEl, setAnchorEl] = useState<Element | null>(null);
+
     const open = Boolean(anchorEl);
 
     const handleClick = (e: MouseEvent) => setAnchorEl(e.currentTarget);
+
     const handleClose = () => setAnchorEl(null);
 
     return (
-        <>
+        <Fragment>
             <PageHeader />
             <P>
                 The <Code>IconMenuItem</Code> is a styled <Code>MenuItem</Code> used for the other components.
@@ -69,6 +71,6 @@ return (
   </div>
 );`}
             />
-        </>
+        </Fragment>
     );
 };

@@ -1,16 +1,17 @@
-import { Fragment } from 'react';
+import { FC, Fragment } from 'react';
 import { useLocation } from 'react-router-dom';
 import { Space, Typography } from 'ui';
 
 import { CodeBlock } from '@/components/CodeBlock';
 import { getPageFromRoute } from '@/core/routes/routeMap';
 
-interface ImportSampleProps {
+type ImportSampleProps = {
     importCode?: string;
-}
+};
 
-export const PageHeader = ({ importCode: code }: ImportSampleProps) => {
+export const PageHeader: FC<ImportSampleProps> = ({ importCode: code }) => {
     const location = useLocation();
+
     const info = getPageFromRoute(location.pathname);
 
     return (

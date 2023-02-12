@@ -19,6 +19,7 @@ export const NestedMenuItemPage = () => {
     const open = Boolean(anchorEl);
 
     const handleClick = (e: MouseEvent) => setAnchorEl(e.currentTarget);
+
     const handleClose = () => setAnchorEl(null);
 
     return (

@@ -23,7 +23,7 @@ export const InstallationPage: FC = () => {
             </P>
             <CodeBlock code="npm install mui-nested-menu" />
             <Subheading>🛠 Exports</Subheading>
-            <P>The following items and interfaces are exported from the package:</P>
+            <P>The following items and types are exported from the package:</P>
             <P>
                 <ol>
                     <li>
@@ -45,7 +45,7 @@ export const InstallationPage: FC = () => {
                         <Code>{'<Menu />'}</Code> component.
                     </li>
                     <li>
-                        <Code>MenuItemData</Code> - An interface for the menuItemsData prop.
+                        <Code>MenuItemData</Code> - A type for the menuItemsData prop.
                     </li>
                 </ol>
             </P>

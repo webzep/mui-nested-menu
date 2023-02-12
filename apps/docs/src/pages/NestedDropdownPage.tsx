@@ -4,7 +4,7 @@ import SaveAsIcon from '@mui/icons-material/SaveOutlined';
 import SaveIcon from '@mui/icons-material/SaveRounded';
 import { createTheme, ThemeProvider as MTP } from '@mui/material/styles';
 import { MenuItemData, NestedDropdown } from 'mui-nested-menu';
-import React, { FC, Fragment } from 'react';
+import { FC, Fragment, MouseEvent } from 'react';
 
 import { CodeBlock } from '@/components/CodeBlock';
 import { PageHeader } from '@/components/ImportSample';
@@ -14,13 +14,13 @@ import { Code, P, Subheading } from '@/components/StyledTypography';
 const menuItemsData: MenuItemData = {
     items: [
         {
-            callback: (event: React.MouseEvent<HTMLElement>, item: MenuItemData) =>
+            callback: (event: MouseEvent<HTMLElement>, item: MenuItemData) =>
                 console.log('New clicked', event, item),
             label: 'New',
             leftIcon: <NewIcon />,
         },
         {
-            callback: (event: React.MouseEvent<HTMLElement>, item: MenuItemData) =>
+            callback: (event: MouseEvent<HTMLElement>, item: MenuItemData) =>
                 console.log('Save clicked', event, item),
             label: 'Save',
             leftIcon: <SaveIcon />,
@@ -28,13 +28,13 @@ const menuItemsData: MenuItemData = {
         {
             items: [
                 {
-                    callback: (event: React.MouseEvent<HTMLElement>, item: MenuItemData) =>
+                    callback: (event: MouseEvent<HTMLElement>, item: MenuItemData) =>
                         console.log('Save As > Option 1 clicked', event, item),
                     label: 'Option 1',
                     rightIcon: <SaveAsIcon />,
                 },
                 {
-                    callback: (event: React.MouseEvent<HTMLElement>, item: MenuItemData) =>
+                    callback: (event: MouseEvent<HTMLElement>, item: MenuItemData) =>
                         console.log('Save As > Option 2 clicked', event, item),
                     disabled: true,
                     label: 'Option 2',
@@ -49,14 +49,14 @@ const menuItemsData: MenuItemData = {
                 {
                     items: [
                         {
-                            callback: (event: React.MouseEvent<HTMLElement>, item: MenuItemData) =>
+                            callback: (event: MouseEvent<HTMLElement>, item: MenuItemData) =>
                                 console.log('Export > FT1 > O1 clicked', event, item),
                             label: 'Option 1',
                             rightIcon: <SaveAsIcon />,
                             sx: { color: '#FF0000' },
                         },
                         {
-                            callback: (event: React.MouseEvent<HTMLElement>, item: MenuItemData) =>
+                            callback: (event: MouseEvent<HTMLElement>, item: MenuItemData) =>
                                 console.log('Export > FT1 > O2 clicked', event, item),
                             label: 'Option 2',
                             leftIcon: <SaveAsIcon />,
@@ -65,7 +65,7 @@ const menuItemsData: MenuItemData = {
                     label: 'File Type 1',
                 },
                 {
-                    callback: (event: React.MouseEvent<HTMLElement>, item: MenuItemData) =>
+                    callback: (event: MouseEvent<HTMLElement>, item: MenuItemData) =>
                         console.log('Export > FT2 clicked', event, item),
                     label: 'File Type 2',
                 },
