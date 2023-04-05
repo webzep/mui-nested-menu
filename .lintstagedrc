@@ -1,0 +1,8 @@
+{
+    "*.{js,ts}": [
+        "eslint"
+    ],
+    "*.{json,yml,md,css,html}": [
+        "prettier"
+    ]
+}

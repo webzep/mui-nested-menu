@@ -1,0 +1,17 @@
+{
+    "compilerOptions": {
+        "esModuleInterop": true,
+        "forceConsistentCasingInFileNames": true,
+        "jsx": "react-jsx",
+        "module": "ES6",
+        "moduleResolution": "node",
+        "removeComments": true,
+        "resolveJsonModule": true,
+        "skipLibCheck": true,
+        "sourceMap": false,
+        "strict": true,
+        "target": "ES2019"
+    },
+    "exclude": [".git", "node_modules"],
+    "include": ["src/**/*"]
+}

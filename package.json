@@ -1,29 +1,52 @@
 {
-	"private": true,
-	"workspaces": [
-		"apps/*",
-		"packages/*"
-	],
-	"scripts": {
-		"docs": "yarn workspace docs",
-		"menu": "yarn workspace mui-nested-menu",
-		"build": "turbo run build",
-		"clean": "turbo run clean",
-		"dev": "turbo run dev --no-cache --parallel --continue",
-		"format": "prettier --write \"**/*.{ts,tsx,md,json}\"",
-		"lint": "turbo run lint",
-		"postinstall": "yarn menu dist"
-	},
-	"devDependencies": {
-		"@parcel/packager-ts": "2.7.0",
-		"@parcel/transformer-typescript-types": "2.7.0",
-		"eslint": "^8.4.1",
-		"prettier": "^2.5.1",
-		"turbo": "latest",
-		"typescript": "4.7.2"
-	},
-	"resolutions": {
-		"typescript": "~4.7",
-		"react": "17.0.2"
-	}
+    "private": true,
+    "workspaces": [
+        "apps/*",
+        "packages/*"
+    ],
+    "scripts": {
+        "commit": "npx cz",
+        "deduplicate": "yarn yarn-deduplicate -s fewer",
+        "docs": "yarn workspace docs",
+        "postinstall": "yarn deduplicate && yarn lint:sortpackages",
+        "lint": "concurrently \"yarn lint:eslint\" \"yarn lint:prettier\" \"yarn lint:sortpackages\"",
+        "lint:eslint": "eslint --config .eslintrc --fix '{*,**/*}.{js,jsx,ts,tsx}'",
+        "lint:prettier": "prettier --write '{*,**/*}.{css,html,json,js,jsx,md,ts,tsx,yml,yaml}'",
+        "lint:sortpackages": "sort-package-json package.json **/*/package.json",
+        "menu": "yarn workspace mui-nested-menu",
+        "prepare": "husky install",
+        "prestart": "yarn global add turbo",
+        "start": "turbo run start"
+    },
+    "config": {
+        "commitizen": {
+            "path": "./node_modules/cz-customizable"
+        },
+        "cz-customizable": {
+            "config": "./cz.config.js"
+        }
+    },
+    "devDependencies": {
+        "@parcel/packager-ts": "2.8.3",
+        "@parcel/transformer-typescript-types": "2.8.3",
+        "@typescript-eslint/eslint-plugin": "5.50.0",
+        "@typescript-eslint/parser": "5.50.0",
+        "commitizen": "4.3.0",
+        "concurrently": "7.6.0",
+        "cz-customizable": "7.0.0",
+        "eslint": "8.33.0",
+        "eslint-config-prettier": "8.6.0",
+        "eslint-import-resolver-typescript": "3.5.3",
+        "eslint-plugin-import": "2.27.5",
+        "eslint-plugin-react": "7.32.2",
+        "eslint-plugin-simple-import-sort": "10.0.0",
+        "eslint-plugin-unused-imports": "2.0.0",
+        "husky": "8.0.3",
+        "lint-staged": "13.1.0",
+        "prettier": "2.8.3",
+        "sort-package-json": "2.4.0",
+        "ttypescript": "1.5.15",
+        "turbo": "1.7.2",
+        "yarn-deduplicate": "6.0.1"
+    }
 }
