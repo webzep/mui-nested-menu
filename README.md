@@ -18,17 +18,17 @@ $ npm install mui-nested-menu
 
 The following items and interfaces are exported from the package:
 
--   `NestedDropdown` - To create menu bar dropdowns.
+- `NestedDropdown` - To create menu bar dropdowns.
 
--   `ContextMenu` - For a right-click menu.
+- `ContextMenu` - For a right-click menu.
 
--   `IconMenuItem` - A menu item which can take start and end icons.
+- `IconMenuItem` - A menu item which can take start and end icons.
 
--   `NestedMenuItem` - The actual nested menu component.
+- `NestedMenuItem` - The actual nested menu component.
 
--   `nestedMenuItemsFromObject({(items, isOpen, handleClose)})` - Utility function which returns a list of menu items from a given array of items in the object format you see in the samples. You can then manually put this inside a `<Menu />` component.
+- `nestedMenuItemsFromObject({(items, isOpen, handleClose)})` - Utility function which returns a list of menu items from a given array of items in the object format you see in the samples. You can then manually put this inside a `<Menu />` component.
 
--   `MenuItemData` - An interface for the `menuItemsData` prop.
+- `MenuItemData` - An interface for the `menuItemsData` prop.
 
 ## 💻 Contributing
 
@@ -42,8 +42,9 @@ Pull requests for [the project](https://github.com/steviebaa/mui-nested-menu) ar
 
 ## 📝 Changelog
 
-| Version | Breaking | Changes                                                                                                               |
-| ------- | -------- | --------------------------------------------------------------------------------------------------------------------- |
-| 3.0.0   | no       | Support for ESM and CJS modules.                                                                                      |
-| 3.1.0   | yes      | Make disabled ans SX props available. Fixes typo `nesteMenuItemsFromObjectProps` to `nestedMenuItemsFromObjectProps`. |
-| 3.2.0   | no       | Provide event and item in callback.                                                                                   |
+Version | Breaking | Changes
+------- | -------- | ---------------------------------------------------------------------------------------------------------------------
+3.0.0   | no       | Support for ESM and CJS modules.
+3.1.0   | yes      | Make disabled ans SX props available. Fixes typo `nesteMenuItemsFromObjectProps` to `nestedMenuItemsFromObjectProps`.
+3.2.0   | no       | Provide event and item in callback.
+3.2.1   | no       | [@mui/material/styles/styled 4 level import fixed](https://github.com/steviebaa/mui-nested-menu/pull/32)
