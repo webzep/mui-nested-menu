@@ -1,7 +1,7 @@
 {
   "name": "mui-nested-menu",
   "description": "Infinitely deep nested menu items for MUI 5.",
-  "version": "3.3.0",
+  "version": "3.2.1",
   "homepage": "https://mui-nested-menu.vercel.app/",
   "repository": {
     "type": "git",
