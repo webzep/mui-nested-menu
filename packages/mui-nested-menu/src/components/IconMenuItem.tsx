@@ -1,5 +1,5 @@
 import MenuItem, { MenuItemProps } from '@mui/material/MenuItem';
-import styled from '@mui/material/styles/styled';
+import { styled } from '@mui/material/styles';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/system/Box';
 import { SxProps } from '@mui/system/styleFunctionSx/styleFunctionSx';
