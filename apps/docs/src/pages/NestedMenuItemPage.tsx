@@ -41,8 +41,9 @@ export const NestedMenuItemPage = () => {
                             <NestedMenuItem
                                 leftIcon={<AdbIcon />}
                                 rightIcon={<FlutterDashIcon />}
-                                label="Top Level"
+                                label={<div><b>Top</b> Level</div>}
                                 parentMenuOpen={open}
+                                menuPosition="left"
                             >
                                 <MenuItem onClick={handleClose}>Standard Menu Item!</MenuItem>
                                 <IconMenuItem
