@@ -30,6 +30,7 @@ export type NestedMenuItemProps = Omit<MenuItemProps, 'button'> & {
     ContainerProps?: HTMLAttributes<HTMLElement> & RefAttributes<HTMLElement | null>;
     MenuProps?: Partial<Omit<MenuProps, 'children'>>;
     button?: true | undefined;
+    menuPosition?: 'left' | 'right';
 };
 
 const NestedMenuItem = forwardRef<HTMLLIElement | null, NestedMenuItemProps>(function NestedMenuItem(
@@ -45,6 +46,7 @@ const NestedMenuItem = forwardRef<HTMLLIElement | null, NestedMenuItemProps>(fun
         className,
         tabIndex: tabIndexProp,
         ContainerProps: ContainerPropsProp = {},
+        menuPosition = 'right',
         MenuProps,
         ...MenuItemProps
     } = props;
@@ -153,11 +155,11 @@ const NestedMenuItem = forwardRef<HTMLLIElement | null, NestedMenuItemProps>(fun
                 style={{ pointerEvents: 'none' }}
                 anchorEl={menuItemRef.current}
                 anchorOrigin={{
-                    horizontal: 'right',
+                    horizontal: menuPosition === 'right' ? 'right' : 'left',
                     vertical: 'top',
                 }}
                 transformOrigin={{
-                    horizontal: 'left',
+                    horizontal: menuPosition === 'right' ? 'left' : 'right',
                     vertical: 'top',
                 }}
                 open={open}
