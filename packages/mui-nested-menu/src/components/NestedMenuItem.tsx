@@ -21,6 +21,7 @@ export type NestedMenuItemProps = Omit<MenuItemProps, 'button'> & {
     parentMenuOpen: boolean;
     component?: ElementType;
     label?: string;
+    renderLabel?: () => ReactNode;
     rightIcon?: ReactNode;
     leftIcon?: ReactNode;
     children?: ReactNode;
@@ -39,6 +40,7 @@ const NestedMenuItem = forwardRef<HTMLLIElement | null, NestedMenuItemProps>(fun
     const {
         parentMenuOpen,
         label,
+        renderLabel,
         rightIcon = <ChevronRight />,
         leftIcon = null,
         children,
@@ -145,6 +147,7 @@ const NestedMenuItem = forwardRef<HTMLLIElement | null, NestedMenuItemProps>(fun
                 leftIcon={leftIcon}
                 rightIcon={rightIcon}
                 label={label}
+                renderLabel={renderLabel}
             />
 
             <Menu

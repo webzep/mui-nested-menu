@@ -27,6 +27,7 @@ type IconMenuItemProps = {
     className?: string;
     disabled?: boolean;
     label?: string;
+    renderLabel?: () => React.ReactNode;
     leftIcon?: React.ReactNode;
     onClick?: (event: React.MouseEvent<HTMLElement>) => void;
     ref?: RefObject<HTMLLIElement>;
@@ -35,14 +36,14 @@ type IconMenuItemProps = {
 };
 
 export const IconMenuItem = forwardRef<HTMLLIElement, IconMenuItemProps>(function IconMenuItem(
-    { MenuItemProps, className, label, leftIcon, rightIcon, ...props },
+    { MenuItemProps, className, label, leftIcon, renderLabel, rightIcon, ...props },
     ref
 ) {
     return (
         <StyledMenuItem {...MenuItemProps} ref={ref} className={className} {...props}>
             <FlexBox>
                 {leftIcon}
-                <StyledTypography>{label}</StyledTypography>
+                {renderLabel ? renderLabel() : <StyledTypography>{label}</StyledTypography>}
             </FlexBox>
             {rightIcon}
         </StyledMenuItem>
