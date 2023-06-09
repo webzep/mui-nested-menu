@@ -81,8 +81,10 @@ const NestedMenuItem = forwardRef<HTMLLIElement | null, NestedMenuItemProps>(fun
     // Check if any immediate children are active
     const isSubmenuFocused = () => {
         const active = containerRef.current?.ownerDocument.activeElement ?? null;
-        // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-        for (const child of menuContainerRef.current!.children) {
+        if(menuContainerRef.current == null) {
+            return false;
+        }
+        for (const child of menuContainerRef.current.children) {
             if (child === active) {
                 return true;
             }
