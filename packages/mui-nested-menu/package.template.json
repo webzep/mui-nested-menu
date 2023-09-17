@@ -1,14 +1,14 @@
 {
   "name": "mui-nested-menu",
   "description": "Infinitely deep nested menu items for MUI 5.",
-  "version": "3.2.1",
+  "version": "3.2.2",
   "homepage": "https://mui-nested-menu.vercel.app/",
   "repository": {
     "type": "git",
-    "url": "https://github.com/steviebaa/mui-nested-menu.git"
+    "url": "https://github.com/webzep/mui-nested-menu.git"
   },
   "bugs": {
-    "url": "https://github.com/steviebaa/mui-nested-menu/issues"
+    "url": "https://github.com/webzep/mui-nested-menu/issues"
   },
   "main": "index.js",
   "module": "module.js",

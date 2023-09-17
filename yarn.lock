@@ -9508,7 +9508,7 @@ msgpackr@^1.5.4:
     msgpackr-extract "^2.1.2"
 
 mui-nested-menu@*, "mui-nested-menu@file:/Users/steve/Desktop/dev/mui-nested-menu/packages/mui-nested-menu":
-  version "3.2.1"
+  version "3.2.2"
   resolved "file:packages/mui-nested-menu"
   dependencies:
     "@emotion/react" "11.10.5"

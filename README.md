@@ -8,7 +8,7 @@ This package provides components to let you nest menu items infinitely deep. The
 
 ## 📦 Install
 
-The code is [open source](https://github.com/steviebaa/mui-nested-menu), so you can use the library by copying the `src/mui-nested-menu` directory to your project (if you'd like to adapt the components) or by installing it via NPM.
+The code is [open source](https://github.com/webzep/mui-nested-menu), so you can use the library by copying the `src/mui-nested-menu` directory to your project (if you'd like to adapt the components) or by installing it via NPM.
 
 ```
 $ npm install mui-nested-menu
@@ -32,7 +32,8 @@ The following items and interfaces are exported from the package:
 
 ## 💻 Contributing
 
-Pull requests for [the project](https://github.com/steviebaa/mui-nested-menu) are more than welcome. Please make sure to stick to the coding style used throughout the project.
+Pull requests for [the project](https://github.com/webzep
+/mui-nested-menu) are more than welcome. Please make sure to stick to the coding style used throughout the project.
 
 1. Clone the project from GitHub - it is a monorepo.
 2. `yarn && yarn start` and you should see the docs on `localhost:1000`.
@@ -47,4 +48,5 @@ Version | Breaking | Changes
 3.0.0   | no       | Support for ESM and CJS modules.
 3.1.0   | yes      | Make disabled ans SX props available. Fixes typo `nesteMenuItemsFromObjectProps` to `nestedMenuItemsFromObjectProps`.
 3.2.0   | no       | Provide event and item in callback.
-3.2.1   | no       | [@mui/material/styles/styled 4 level import fixed](https://github.com/steviebaa/mui-nested-menu/pull/32)
+3.2.1   | no       | [@mui/material/styles/styled 4 level import fixed](https://github.com/webzep/mui-nested-menu/pull/32)
+3.2.2   | no       | Documentation updates

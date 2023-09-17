@@ -16,7 +16,7 @@ export const InstallationPage: FC = () => {
             </P>
             <Subheading>📦 Install</Subheading>
             <P>
-                The code is <a href="https://github.com/steviebaa/mui-nested-menu">open source</a>, so you can
+                The code is <a href="https://github.com/webzep/mui-nested-menu">open source</a>, so you can
                 use the library by copying the <Code>src/mui-nested-menu</Code> directory to your project (if
                 you&apos;d like to adapt the components) or by installing it via{' '}
                 <a href="https://www.npmjs.com/package/mui-nested-menu">NPM</a>.
@@ -51,7 +51,7 @@ export const InstallationPage: FC = () => {
             </P>
             <Subheading>💻 Contributing</Subheading>
             <P>
-                Pull requests for <a href="https://github.com/steviebaa/mui-nested-menu">the project</a> are
+                Pull requests for <a href="https://github.com/webzep/mui-nested-menu">the project</a> are
                 more than welcome. Please make sure to stick to the coding style used throughout the project.
             </P>
             <P>
