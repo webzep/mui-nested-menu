@@ -21,6 +21,7 @@ export type NestedMenuItemProps = Omit<MenuItemProps, 'button'> & {
     parentMenuOpen: boolean;
     component?: ElementType;
     label?: string;
+    renderLabel?: () => ReactNode;
     rightIcon?: ReactNode;
     leftIcon?: ReactNode;
     children?: ReactNode;
@@ -39,6 +40,7 @@ const NestedMenuItem = forwardRef<HTMLLIElement | null, NestedMenuItemProps>(fun
     const {
         parentMenuOpen,
         label,
+        renderLabel,
         rightIcon = <ChevronRight />,
         leftIcon = null,
         children,
@@ -79,8 +81,10 @@ const NestedMenuItem = forwardRef<HTMLLIElement | null, NestedMenuItemProps>(fun
     // Check if any immediate children are active
     const isSubmenuFocused = () => {
         const active = containerRef.current?.ownerDocument.activeElement ?? null;
-        // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-        for (const child of menuContainerRef.current!.children) {
+        if(menuContainerRef.current == null) {
+            return false;
+        }
+        for (const child of menuContainerRef.current.children) {
             if (child === active) {
                 return true;
             }
@@ -145,6 +149,7 @@ const NestedMenuItem = forwardRef<HTMLLIElement | null, NestedMenuItemProps>(fun
                 leftIcon={leftIcon}
                 rightIcon={rightIcon}
                 label={label}
+                renderLabel={renderLabel}
             />
 
             <Menu
