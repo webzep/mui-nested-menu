@@ -37,7 +37,7 @@ export const IconMenuItemPage: FC = () => {
                             <IconMenuItem
                                 leftIcon={<AdbIcon />}
                                 rightIcon={<FlutterDashIcon />}
-                                label={'Icon Menu Item'}
+								label={'Icon Menu Item'}
                                 onClick={handleClose}
                             />
                         </Menu>
@@ -64,7 +64,7 @@ return (
       <IconMenuItem
         leftIcon={<AdbIcon />}
         rightIcon={<FlutterDashIcon />}
-        label="Icon Menu Item"
+        label="Icon Menu Item" // or renderLabel={() => 'Icon Menu Item'}
         onClick={handleClose}
       />
     </Menu>
