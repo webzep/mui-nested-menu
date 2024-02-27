@@ -21,7 +21,9 @@ export function nestedMenuItemsFromObject({
 }: nestedMenuItemsFromObjectProps) {
     return items.map((item) => {
         const { leftIcon, rightIcon, label, items, callback, sx, disabled } = item;
-
+        if (item.disabled) {
+            item.items = [];
+        }
         if (items && items.length > 0) {
             // Recurse deeper
             return (
