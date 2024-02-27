@@ -31,6 +31,7 @@ export type NestedMenuItemProps = Omit<MenuItemProps, 'button'> & {
     ContainerProps?: HTMLAttributes<HTMLElement> & RefAttributes<HTMLElement | null>;
     MenuProps?: Partial<Omit<MenuProps, 'children'>>;
     button?: true | undefined;
+    parentMenuDisabled?: boolean;
 };
 
 const NestedMenuItem = forwardRef<HTMLLIElement | null, NestedMenuItemProps>(function NestedMenuItem(
@@ -48,6 +49,7 @@ const NestedMenuItem = forwardRef<HTMLLIElement | null, NestedMenuItemProps>(fun
         tabIndex: tabIndexProp,
         ContainerProps: ContainerPropsProp = {},
         MenuProps,
+        parentMenuDisabled = false,
         ...MenuItemProps
     } = props;
 
@@ -64,7 +66,9 @@ const NestedMenuItem = forwardRef<HTMLLIElement | null, NestedMenuItemProps>(fun
     const [isSubMenuOpen, setIsSubMenuOpen] = useState(false);
 
     const handleMouseEnter = (e: MouseEvent<HTMLElement>) => {
-        setIsSubMenuOpen(true);
+        if(parentMenuDisabled === false) {
+            setIsSubMenuOpen(true);
+        }
 
         if (ContainerProps.onMouseEnter) {
             ContainerProps.onMouseEnter(e);
@@ -94,7 +98,7 @@ const NestedMenuItem = forwardRef<HTMLLIElement | null, NestedMenuItemProps>(fun
     };
 
     const handleFocus = (e: FocusEvent<HTMLElement>) => {
-        if (e.target === containerRef.current) {
+        if (e.target === containerRef.current && parentMenuDisabled === false) {
             setIsSubMenuOpen(true);
         }
 
