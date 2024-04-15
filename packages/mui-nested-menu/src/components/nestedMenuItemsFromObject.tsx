@@ -20,7 +20,7 @@ export function nestedMenuItemsFromObject({
     handleClose,
 }: nestedMenuItemsFromObjectProps) {
     return items.map((item) => {
-        const { leftIcon, rightIcon, label, items, callback, sx, disabled } = item;
+        const { leftIcon, rightIcon, label, items, callback, sx, disabled, delay } = item;
 
         if (items && items.length > 0) {
             // Recurse deeper
@@ -32,6 +32,7 @@ export function nestedMenuItemsFromObject({
                     label={label}
                     parentMenuOpen={isOpen}
                     sx={sx}
+                    delay={delay}
                     disabled={disabled}
                 >
                     {/* Call this function to nest more items */}
