@@ -69,7 +69,9 @@ const NestedMenuItem = forwardRef<HTMLLIElement | null, NestedMenuItemProps>(fun
 
     const handleMouseEnter = (e: MouseEvent<HTMLElement>) => {
         timeoutRef.current = setTimeout(() => {
-            setIsSubMenuOpen(true);
+            if (!props.disabled) {
+                setIsSubMenuOpen(true);
+            }
 
             if (ContainerProps.onMouseEnter) {
                 ContainerProps.onMouseEnter(e);
@@ -103,7 +105,7 @@ const NestedMenuItem = forwardRef<HTMLLIElement | null, NestedMenuItemProps>(fun
     };
 
     const handleFocus = (e: FocusEvent<HTMLElement>) => {
-        if (e.target === containerRef.current) {
+        if (e.target === containerRef.current && !props.disabled) {
             setIsSubMenuOpen(true);
         }
 
