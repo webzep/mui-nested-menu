@@ -30,7 +30,7 @@ const menuItemsData: MenuItemData = {
                 {
                     callback: (event: MouseEvent<HTMLElement>, item: MenuItemData) =>
                         console.log('Save As > Option 1 clicked', event, item),
-                    label: 'Option 1',
+                    label: 'This way delayed',
                     rightIcon: <SaveAsIcon />,
                 },
                 {
@@ -41,7 +41,8 @@ const menuItemsData: MenuItemData = {
                     leftIcon: <SaveAsIcon />,
                 },
             ],
-            label: 'Save As',
+            delay: 300,
+            label: 'Save As (300ms delay)',
             leftIcon: <SaveAsIcon />,
         },
         {
@@ -127,11 +128,12 @@ export const NestedDropdownPage: FC = () => {
       callback: (event, item) => console.log('Save clicked', event, item),
     },
     {
-      label: 'Save As',
+      label: 'Save As (300ms delay)',
       leftIcon: <SaveAsIcon />,
+	  delay: 300,
       items: [
         {
-          label: 'Option 1',
+          label: 'This way delayed',
           rightIcon: <SaveAsIcon />,
           callback: (event, item) => console.log('Save As > Option 1 clicked', event, item),
         },
