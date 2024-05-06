@@ -50,3 +50,4 @@ Version | Breaking | Changes
 3.2.0   | no       | Provide event and item in callback.
 3.2.1   | no       | [@mui/material/styles/styled 4 level import fixed](https://github.com/webzep/mui-nested-menu/pull/32)
 3.2.2   | no       | Documentation updates
+3.4.0   | no       | Fixes disabled prop. Adds delay prop to NestedMenuItem.
