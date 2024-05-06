@@ -34,7 +34,6 @@ export function nestedMenuItemsFromObject({
                     sx={sx}
                     delay={delay}
                     disabled={disabled}
-                    parentMenuDisabled={disabled}
                 >
                     {/* Call this function to nest more items */}
                     {nestedMenuItemsFromObject({
