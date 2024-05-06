@@ -72,6 +72,17 @@ const menuItemsData: MenuItemData[] = [
         leftIcon: <AdbIcon />,
         rightIcon: <AdbIcon />,
     },
+    {
+        delay: 500,
+        items: [
+            {
+                callback: (event: React.MouseEvent<HTMLElement>, item: MenuItemData) =>
+                    console.log('Delay in ms to prevent blinking on hovering > I was delayed! clicked', event, item),
+                label: 'I was delayed!',
+            },
+        ],
+        label: 'Delay in ms to prevent blinking on hovering',
+    },
 ];
 
 export const ContextMenuPage: FC = () => {
@@ -186,6 +197,17 @@ export const ContextMenuPage: FC = () => {
       },
     ],
   },
+  {
+    delay: 500,
+    items: [
+        {
+            callback: (event: React.MouseEvent<HTMLElement>, item: MenuItemData) =>
+                console.log('Delay in ms to prevent blinking on hovering > I was delayed! clicked', event, item),
+            label: 'I was delayed!',
+        },
+    ],
+    label: 'Delay in ms to prevent blinking on hovering',
+},
 ]`}
             />
         </Fragment>

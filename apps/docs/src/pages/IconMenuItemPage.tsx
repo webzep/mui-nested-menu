@@ -38,7 +38,7 @@ export const IconMenuItemPage: FC = () => {
                                 leftIcon={<AdbIcon />}
                                 rightIcon={<FlutterDashIcon />}
 								label={'Icon Menu Item'}
-                                onClick={handleClose}
+								onClick={handleClose}
                             />
                         </Menu>
                     </div>
