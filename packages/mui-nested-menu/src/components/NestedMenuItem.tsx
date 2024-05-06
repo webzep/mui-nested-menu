@@ -31,6 +31,7 @@ export type NestedMenuItemProps = Omit<MenuItemProps, 'button'> & {
     ContainerProps?: HTMLAttributes<HTMLElement> & RefAttributes<HTMLElement | null>;
     MenuProps?: Partial<Omit<MenuProps, 'children'>>;
     button?: true | undefined;
+    delay?: number;
 };
 
 const NestedMenuItem = forwardRef<HTMLLIElement | null, NestedMenuItemProps>(function NestedMenuItem(
@@ -48,6 +49,7 @@ const NestedMenuItem = forwardRef<HTMLLIElement | null, NestedMenuItemProps>(fun
         tabIndex: tabIndexProp,
         ContainerProps: ContainerPropsProp = {},
         MenuProps,
+        delay = 0,
         ...MenuItemProps
     } = props;
 
@@ -61,16 +63,23 @@ const NestedMenuItem = forwardRef<HTMLLIElement | null, NestedMenuItemProps>(fun
 
     const menuContainerRef = useRef<HTMLDivElement | null>(null);
 
+    const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
     const [isSubMenuOpen, setIsSubMenuOpen] = useState(false);
 
     const handleMouseEnter = (e: MouseEvent<HTMLElement>) => {
-        setIsSubMenuOpen(true);
+        timeoutRef.current = setTimeout(() => {
+            setIsSubMenuOpen(true);
 
-        if (ContainerProps.onMouseEnter) {
-            ContainerProps.onMouseEnter(e);
-        }
+            if (ContainerProps.onMouseEnter) {
+                ContainerProps.onMouseEnter(e);
+            }
+        }, delay);
     };
+    
     const handleMouseLeave = (e: MouseEvent<HTMLElement>) => {
+        timeoutRef.current && clearTimeout(timeoutRef.current);
+
         setIsSubMenuOpen(false);
 
         if (ContainerProps.onMouseLeave) {

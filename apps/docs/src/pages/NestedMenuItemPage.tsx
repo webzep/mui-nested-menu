@@ -65,6 +65,14 @@ export const NestedMenuItemPage = () => {
                                         label="Icon Menu Item"
                                     />
                                 </NestedMenuItem>
+                                <NestedMenuItem
+                                    rightIcon={<ArrowRightIcon />}
+                                    label="Delay in ms to prevent blinking on hovering"
+                                    parentMenuOpen={open}
+                                    delay={500}
+                                >
+                                    <MenuItem onClick={handleClose}>I was delayed!</MenuItem>
+                                </NestedMenuItem>
                             </NestedMenuItem>
                         </Menu>
                     </div>
@@ -113,6 +121,14 @@ return (
             rightIcon={<SaveIcon />}
             label="Icon Menu Item"
           />
+        </NestedMenuItem>
+        <NestedMenuItem
+          rightIcon={<ArrowRightIcon />}
+          label="Delay in ms to prevent blinking on hovering"
+          parentMenuOpen={open}
+          delay={500}
+        >
+          <MenuItem onClick={handleClose}>I was delayed!</MenuItem>
         </NestedMenuItem>
       </NestedMenuItem>
     </Menu>

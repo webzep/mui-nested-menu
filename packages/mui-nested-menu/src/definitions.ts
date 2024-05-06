@@ -9,4 +9,5 @@ export interface MenuItemData {
     items?: MenuItemData[];
     disabled?: boolean;
     sx?: SxProps;
+    delay?: number;
 }
