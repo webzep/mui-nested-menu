@@ -1,6 +1,6 @@
 {
     "name": "mui-nested-menu",
-    "version": "3.3.0",
+    "version": "3.4.0",
     "description": "Infinitely deep nested menu items for MUI 5.",
     "keywords": [
         "design",
@@ -29,6 +29,7 @@
         "copy": "cp ../../README.md ./dist/README.md && cp ../../LICENSE ./dist/LICENSE && cp ./package.template.json ./dist/package.json",
         "dist": "npm run clean && npm run build:package && npm run copy",
         "prepare": "npm run version:currentpackage",
+        "publish:major": "npm run prepare && npm version major && npm run dist && cd ./dist && npm publish  && cd ../../..",
         "publish:minor": "npm run prepare && npm version minor && npm run dist && cd ./dist && npm publish  && cd ../../..",
         "publish:patch": "npm run prepare && npm version patch && npm run dist && cd ./dist && npm publish  && cd ../../..",
         "set-package:build": "npm pkg set module=dist/module.js && npm pkg set types=dist/index.d.ts",
@@ -38,15 +39,15 @@
         "version:currenttemplate": "VERSION=$(npx fx package.json 'x => x.version') && npx fx package.template.json '{...x, version: \"'$VERSION'\"}' > temp.json && mv temp.json package.template.json"
     },
     "dependencies": {
-        "@emotion/react": "11.10.5",
-        "@emotion/styled": "11.10.5",
-        "@mui/material": "5.0.0",
-        "@mui/system": "5.10.12",
+        "@emotion/react": "11.14.0",
+        "@emotion/styled": "11.14.0",
+        "@mui/material": "6.3.1",
+        "@mui/system": "6.3.1",
         "react": "18.2.0",
         "react-dom": "18.2.0"
     },
     "devDependencies": {
-        "parcel": "2.11.0",
-        "typescript": "4.9.4"
+        "parcel": "2.13.3",
+        "typescript": "5.7.3"
     }
 }

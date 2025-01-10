@@ -2,7 +2,7 @@
 
 ## It's not perfect, but it's pretty good.
 
-This package provides components to let you nest menu items infinitely deep. The code is an adaption from [this package](material-ui-nested-menu-item) to work with [MUI version 5](https://mui.com).
+This package provides components to let you nest menu items infinitely deep. The code is an adaption from [this package](material-ui-nested-menu-item) to work with [MUI version 5/6](https://mui.com).
 
 [Check out the documentation here.](https://mui-nested-menu.vercel.app/)
 
@@ -43,11 +43,12 @@ Pull requests for [the project](https://github.com/webzep
 
 ## 📝 Changelog
 
-Version | Breaking | Changes
-------- | -------- | ---------------------------------------------------------------------------------------------------------------------
-3.0.0   | no       | Support for ESM and CJS modules.
-3.1.0   | yes      | Make disabled ans SX props available. Fixes typo `nesteMenuItemsFromObjectProps` to `nestedMenuItemsFromObjectProps`.
-3.2.0   | no       | Provide event and item in callback.
-3.2.1   | no       | [@mui/material/styles/styled 4 level import fixed](https://github.com/webzep/mui-nested-menu/pull/32)
-3.2.2   | no       | Documentation updates
-3.4.0   | no       | Fixes disabled prop. Adds delay prop to NestedMenuItem.
+Version | Breaking     | Changes
+------- | ------------ | ---------------------------------------------------------------------------------------------------------------------
+3.0.0   | no           | Support for ESM and CJS modules.
+3.1.0   | yes          | Make disabled ans SX props available. Fixes typo `nesteMenuItemsFromObjectProps` to `nestedMenuItemsFromObjectProps`.
+3.2.0   | no           | Provide event and item in callback.
+3.2.1   | no           | [@mui/material/styles/styled 4 level import fixed](https://github.com/webzep/mui-nested-menu/pull/32)
+3.2.2   | no           | Documentation updates
+3.4.0   | no           | Fixes disabled prop. Adds delay prop to NestedMenuItem.
+4.0.0   | probably not | Upgrade to mui 6.3.1.

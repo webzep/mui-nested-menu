@@ -1,38 +1,44 @@
 {
-    "name": "mui-nested-menu",
-    "description": "Infinitely deep nested menu items for MUI 5.",
-    "version": "3.4.0",
-    "homepage": "https://mui-nested-menu.vercel.app/",
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/webzep/mui-nested-menu.git"
+  "name": "mui-nested-menu",
+  "description": "Infinitely deep nested menu items for MUI 5.",
+  "version": "4.0.0",
+  "homepage": "https://mui-nested-menu.vercel.app/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/webzep/mui-nested-menu.git"
+  },
+  "bugs": {
+    "url": "https://github.com/webzep/mui-nested-menu/issues"
+  },
+  "main": "index.js",
+  "module": "module.js",
+  "types": "index.d.ts",
+  "keywords": [
+    "design",
+    "material",
+    "mui",
+    "react",
+    "ui"
+  ],
+  "author": "Steve Richardson",
+  "license": "MIT",
+  "peerDependencies": {
+    "@mui/material": "^5.0.0 || ^6.0.0",
+    "@emotion/react": "^11.5.0",
+    "@emotion/styled": "^11.3.0",
+    "@types/react": "^17.0.0 || ^18.0.0",
+    "react": "^17.0.0 || ^18.0.0",
+    "react-dom": "^17.0.0 || ^18.0.0"
+  },
+  "peerDependenciesMeta": {
+    "@types/react": {
+      "optional": true
     },
-    "bugs": {
-        "url": "https://github.com/webzep/mui-nested-menu/issues"
+    "@emotion/react": {
+      "optional": true
     },
-    "main": "index.js",
-    "module": "module.js",
-    "types": "index.d.ts",
-    "keywords": ["design", "material", "mui", "react", "ui"],
-    "author": "Steve Richardson",
-    "license": "MIT",
-    "peerDependencies": {
-        "@mui/material": "^5.0.0",
-        "@emotion/react": "^11.5.0",
-        "@emotion/styled": "^11.3.0",
-        "@types/react": "^17.0.0 || ^18.0.0",
-        "react": "^17.0.0 || ^18.0.0",
-        "react-dom": "^17.0.0 || ^18.0.0"
-    },
-    "peerDependenciesMeta": {
-        "@types/react": {
-            "optional": true
-        },
-        "@emotion/react": {
-            "optional": true
-        },
-        "@emotion/styled": {
-            "optional": true
-        }
+    "@emotion/styled": {
+      "optional": true
     }
+  }
 }
