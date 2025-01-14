@@ -52,3 +52,4 @@ Version | Breaking     | Changes
 3.2.2   | no           | Documentation updates
 3.4.0   | no           | Fixes disabled prop. Adds delay prop to NestedMenuItem.
 4.0.0   | probably not | Upgrade to mui 6.3.1.
+4.0.1   | probably not | Add React 19 to peer dependencies.
