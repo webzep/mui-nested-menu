@@ -21,6 +21,7 @@ export const Snackbar = styled.div<SnackbarProviderProps>`
             transform: ${position && ['top', 'bottom'].includes(position) ? 'translateX(-50%)' : ''};
             transition-duration: 500ms;
             transition: min-height;
+            // @ts-ignore
             z-index: ${theme.zIndex.snackbar};
         `;
     }}

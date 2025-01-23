@@ -4,6 +4,8 @@ import { createPortal } from 'react-dom';
 import { Snack } from './Snack';
 import { Snackbar, SnackbarMessage } from './Snackbar';
 import { SnackbarContext } from './SnackbarContext';
+import { defaultTheme, ThemeConfig } from '../../core/themes/themes';
+import { ThemeMode } from 'common';
 
 const addMessageDefaults = (message: SnackbarMessage): MessageWithId => {
     const defaults: Partial<SnackbarMessage> = {
@@ -29,6 +31,7 @@ export type SnackbarProviderProps = {
     margin?: { left?: number; right?: number; top?: number; bottom?: number };
     minWidth?: string;
     position?: 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right' | 'top' | 'bottom';
+    theme?: ThemeConfig;
 };
 
 export const SnackbarProvider: FC<SnackbarProviderProps> = ({ children, ...props }) => {
@@ -43,6 +46,7 @@ export const SnackbarProvider: FC<SnackbarProviderProps> = ({ children, ...props
         margin: Object.assign({}, marginDefaults, props.margin),
         minWidth: '0',
         position: 'bottom-left',
+        theme: defaultTheme(ThemeMode.SYSTEM),
     };
 
     Object.assign(props, defaults);
@@ -57,12 +61,15 @@ export const SnackbarProvider: FC<SnackbarProviderProps> = ({ children, ...props
         setMessages((prev) => ({ ...prev, main: [...prev.main, msg] }));
 
         if (!msg.persist) {
-            setTimeout(() => {
-                setMessages((prev) => ({
-                    ...prev,
-                    main: prev.main.filter((m) => m.id !== msg.id),
-                }));
-            }, (msg.duration ?? 3000) + 1000);
+            setTimeout(
+                () => {
+                    setMessages((prev) => ({
+                        ...prev,
+                        main: prev.main.filter((m) => m.id !== msg.id),
+                    }));
+                },
+                (msg.duration ?? 3000) + 1000
+            );
         }
 
         return msg.id;
